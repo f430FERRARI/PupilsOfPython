@@ -1,5 +1,6 @@
 package com.pupil.python.model;
 
+
 import java.io.FileWriter; 
 import java.io.PrintWriter; 
 import java.io.IOException; 
@@ -11,6 +12,8 @@ public class Login {
 	private String lastName; 
 	private Boolean loginStatus; 
 	private String loginResult;
+	//TODO: Test to do 
+	
 	
 	public void setName(String name){ 
 		lastName = name; 

@@ -7,13 +7,13 @@
 <title>Question #1</title>
 </head>
 <body>
-	<form action="" method="get">  
+	<form action="CheckMcServlet" method="get">  
 		<p>What is a class in Python?</p> 
 		<p> 
-			<input type="radio" name="mc1answer" value="a">a) A keyword used to define a special variable that cannot be altered<br> 
-			<input type="radio" name="mc1answer" value="b">b) A construct used to edit methods<br> 
-			<input type="radio" name="mc1answer" value="c">c) The blueprint for an object<br>
-			<input type="radio" name="mc1answer" value="d">d) A group of snakes	
+			<input type="radio" name="mcanswer" value="a">a) A keyword used to define a special variable that cannot be altered<br> 
+			<input type="radio" name="mcanswer" value="b">b) A construct used to edit methods<br> 
+			<input type="radio" name="mcanswer" value="c">c) The blueprint for an object<br>
+			<input type="radio" name="mcanswer" value="d">d) A group of snakes	
 		</p>
 	</form>
 </body>

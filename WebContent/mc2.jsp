@@ -10,10 +10,10 @@
 	<form action="" method="GET">  
 		<p>Which of the following is <u>not</u> a reason to use classes?</p> 
 		<p> 
-			<input type="radio" name="mc1answer" value="a">a)<br> 
-			<input type="radio" name="mc1answer" value="b">b)<br> 
-			<input type="radio" name="mc1answer" value="c">c)<br>
-			<input type="radio" name="mc1answer" value="d">d)
+			<input type="radio" name="mcanswer" value="a">a)<br> 
+			<input type="radio" name="mcanswer" value="b">b)<br> 
+			<input type="radio" name="mcanswer" value="c">c)<br>
+			<input type="radio" name="mcanswer" value="d">d)
 		</p>
 	</form>
 </body>

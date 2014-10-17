@@ -7,7 +7,7 @@
 <title>Question #3</title>
 </head>
 <body>
-	<form action="" method="GET">  
+	<form action="CheckFbAnswer" method="GET">  
 	// 
 		<p> 
 			<pre> 

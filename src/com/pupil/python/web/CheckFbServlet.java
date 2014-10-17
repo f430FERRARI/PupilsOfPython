@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/CheckAnswer")
+@WebServlet("/CheckFbAnswer")
 public class CheckFbServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

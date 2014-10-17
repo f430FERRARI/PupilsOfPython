@@ -2,8 +2,15 @@ package com.pupil.python.model;
 
 public class CourseProgress extends Progress{
 	
-	public void loadProgress(){ 
+	String identifier = "@";  
+	
+	public void loadProgress(){
 		
 	} 
+	
+	public void saveProgress(){ 
+		super.saveProgress(toSave);;  
+		
+	}
 	
 }

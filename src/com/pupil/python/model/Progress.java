@@ -10,17 +10,13 @@ import java.io.PrintWriter;
 
 public abstract class Progress { 
 	
-	private String progress;
-	private String toSave;
-	
-	public class loadFile {
+	public String progress;
+	public String identifier;
 		
-		public void loader(String qType) throws IOException{
+		public void loadProgress() throws IOException{
 		
 		FileReader fr = new FileReader("../../../../../../WebContent/SAVEFILES/questionprogress.txt");
 		BufferedReader br = new BufferedReader(fr);
-		
-		String identifier = assignIdentifier(qType);
 		
 		List<String> tmp = new ArrayList<String>(); 
 		String ch;  
@@ -40,35 +36,18 @@ public abstract class Progress {
 		    }
 		}      
 		
-		public void saveProgress(String qType) throws IOException { 
+		public void saveProgress(String toSave) throws IOException { 
 			
-			String identifier = assignIdentifier(qType);
-			
-			String toWrite = identifier + toSave;
+			String toWrite = identifier + id + "$" + toSave;
 			FileWriter write = new FileWriter("../../../../../../WebContent/SAVEFILES/questionprogress.txt", true); 
 			PrintWriter print_line = new PrintWriter(write); 
 			print_line.println(toWrite); 
 			print_line.close(); 
 		} 
-		//TODO: How do you get toSave?
+		//TODO: How do you get id?
 
-		private String assignIdentifier(String qType) {
-			if (qType.equals("cp")) { 
-				return "~";
-			}else if (qType.equals("mc")){ 
-				return "%";
-			}else if (qType.equals("fb")){ 
-				return "#";
-			}else if (qType.equals("pr")){ 
-				return "?";
-			}else{  
-				return "fail";
-				//TODO: Throws some sort of error
-			}
-		}
-	}
 
 	public String getProgress(){ 
 		return progress;
 	}
-}
+} 

@@ -4,13 +4,9 @@ public class CheckAnswerFb extends CheckAnswer{
 
 	char[] tempResult = new char[5];
 	
-	String[] answer = new String[6]; 
-	answer[0] = "class";  
-	answer[1] = "init"; 
-	answer[2] = "self"; 
-	answer[3] = "self"; 
-	answer[4] = "def"; 
-	answer[5] = "()";
+	String[] answer = { 
+		"class", "init", "self", "self", "def", "()"
+	};
 	
 	public String checkAnswer(String[] input){ 
 		

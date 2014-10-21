@@ -10,10 +10,11 @@ import java.io.PrintWriter;
 
 public abstract class Progress { 
 	
-	public String progress;
+	//TODO: Add cookie thing 
+	
 	public String identifier;
 		
-		public void loadProgress() throws IOException{
+		public String loadProgress() throws IOException{
 		
 		FileReader fr = new FileReader("../../../../../../WebContent/SAVEFILES/questionprogress.txt");
 		BufferedReader br = new BufferedReader(fr);
@@ -29,12 +30,14 @@ public abstract class Progress {
 		    for(int i=tmp.size()-1;i>=0;i--) {
 		    	String line = tmp.get(i); 
 		    	if (line.contains(identifier)) {  
-		    		String[] parts = tmp.get(i).split("\\$"); 
-					progress = parts[1];   
-					break;
+		    		String[] parts = tmp.get(i).split("\\$");  
+		    		String[] moreParts = parts[0].split(identifier);  
+		    		if (moreParts[1].equals(currentUser)) { 
+						return parts[1];
+		    		}
 		    	}
 		    }
-		}      
+		} //TODO: This method doesnt know what user its looking for      
 		
 		public void saveProgress(String toSave) throws IOException { 
 			
@@ -46,8 +49,4 @@ public abstract class Progress {
 		} 
 		//TODO: How do you get id?
 
-
-	public String getProgress(){ 
-		return progress;
-	}
 } 

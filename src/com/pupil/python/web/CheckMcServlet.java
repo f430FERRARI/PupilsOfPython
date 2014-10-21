@@ -13,6 +13,8 @@ import com.pupil.python.model.CheckAnswerMc;
 import com.pupil.python.model.CourseProgress;
 import com.pupil.python.model.Mc;
 
+//TODO: Should I do one servlet for mc1 and one for mc2?
+
 @WebServlet("/CheckMcServlet")
 public class CheckMcServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -35,15 +37,15 @@ public class CheckMcServlet extends HttpServlet {
 		CourseProgress update = new CourseProgress(); ; 
 		Mc mcUpdate = new Mc();
 		mcUpdate.saveProgress(result); 
-		update.saveProgress(result); 
+		update.saveProgress(result, "mc1"); 
 		
 		//Direct user to appropriate page
 		if (result.equals("1")) { 
-			
+			response.sendRedirect("../../../../../../WebContent/mc1_correct.html");
 		} else { 
-			
+			response.sendRedirect("../../../../../../WebContent/mc_error.html");
 		}
-		//TODO: IF statement to direct result
+		//TODO: Inquire into filters to fix this.
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

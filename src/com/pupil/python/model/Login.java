@@ -64,7 +64,7 @@ public class Login {
 	
 	public void setUser(String setUserName){ 
 		if (checkName(setUserName)) { 
-			loginResult = lastId;
+			loginResult = "Success! You are now logged in as: " + lastId;
 		} else { 
 			loginResult = "Incorrect Name. Please try again.";
 		}		
@@ -82,7 +82,9 @@ public class Login {
 		if (loginStatus == false) {
 			if (checkValidity() == true) { 
 				try{ 
-					this.saveLogin();
+					this.saveLogin(); 
+					loginResult = "The new account with ID number:" + lastId + " has been successfully created!"; 
+					//Watch out for this line
 				} 
 				catch(IOException e) { 
 					System.out.println(e.getMessage());
@@ -91,7 +93,8 @@ public class Login {
 				loginResult = "Invalid login. Please only use the numbers 0-9 in your login ID.";
 			}
 		} 
-	}
+	} 
+	//TODO: Relocate this if statement to the servlet 
 		
 	public Boolean checkValidity(){ 
 		try { 
@@ -111,7 +114,7 @@ public class Login {
 	}
 	
 	public String getLoginResult(){ 
-		return this.loginResult;
+		return loginResult;
 	} 
 
 }

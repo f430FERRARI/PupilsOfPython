@@ -1,6 +1,6 @@
 package com.pupil.python.model;
 
-public class CheckAnswerPr extends CheckAnswer{
+public class CheckAnswerPr{
 
 	public String checkAnswer(String input) { 
 		

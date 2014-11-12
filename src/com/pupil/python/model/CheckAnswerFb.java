@@ -1,8 +1,8 @@
 package com.pupil.python.model;
 
-public class CheckAnswerFb extends CheckAnswer{
+public class CheckAnswerFb{
 
-	char[] tempResult = new char[5];
+	char[] tempResult = new char[6];
 	
 	String[] answer = { 
 		"class", "init", "self", "self", "def", "()"
@@ -47,4 +47,3 @@ public class CheckAnswerFb extends CheckAnswer{
 		return result;
 	}
 } 
-}//TODO: CheckAnswer will return a string 1 if all correct or a 01001 string if not

@@ -20,7 +20,10 @@ public class ResetServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Reset confirmed = new Reset(); 
-		confirmed.resetProgress();
+		confirmed.resetProgress(); 
+		
+		response.sendRedirect("../../../../../../WebContent/reset_success.html");
+
 	}
 //TODO: Redirect to successful reset page.
 	

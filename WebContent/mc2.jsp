@@ -8,13 +8,14 @@
 </head>
 <body>
 	<form action="" method="GET">  
-		<p>Which of the following is <u>not</u> a reason to use classes?</p> 
+		<p>Why are classes used in Python?</p> 
 		<p> 
-			<input type="radio" name="mcanswer" value="a">a)<br> 
-			<input type="radio" name="mcanswer" value="b">b)<br> 
-			<input type="radio" name="mcanswer" value="c">c)<br>
-			<input type="radio" name="mcanswer" value="d">d)
-		</p>
+			<input type="radio" name="mcanswer" value="a">a) To group relevant data and functions together<br> 
+			<input type="radio" name="mcanswer" value="b">b) As a means of reducing replacing if statements<br> 
+			<input type="radio" name="mcanswer" value="c">c) Only as a means of debugging code<br>
+			<input type="radio" name="mcanswer" value="d">d) Solely to teach special concepts in Python
+		</p> 
+		<input type="submit" value="Check Answer">
 	</form>
 </body>
 </html>

@@ -7,6 +7,16 @@
 <title>Course Progress</title>
 </head>
 <body>
-
+	<div class="menubar"> 
+		<img id="pythonLogo" src="">
+		<button type="button"><a href="">Logout</a></button>
+	</div>   
+	<div class="content"> 
+		
+	</div>
+	<div class="navigator"> 
+		<button type="button"><a href="mc1.jsp">Let's begin!</a></button> 
+		<img id="rightNaviArrow" src="">
+	</div>
 </body>
 </html>

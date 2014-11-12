@@ -8,7 +8,6 @@
 </head>
 <body>
 	<form action="CheckFbAnswer" method="GET">  
-	// 
 		<p> 
 			<pre> 
 			<code> 
@@ -25,7 +24,8 @@ cpsc_235 = Classroom(176, False)
 cpsc_235 = is_vacant<input type="text" name="fbanswer" value="" size="5">  
 			</code> 
 			</pre>
-		</p>
+		</p> 
+		<input type="submit" value="Check Answer">
 	</form>
 </body>
 </html>

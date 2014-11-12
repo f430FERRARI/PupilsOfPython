@@ -1,6 +1,6 @@
 package com.pupil.python.model;
 
-public class CheckAnswerMc extends CheckAnswer{
+public class CheckAnswerMc{
 
 	public String answer = "c"; 
 	

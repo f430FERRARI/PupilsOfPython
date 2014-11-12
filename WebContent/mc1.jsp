@@ -14,7 +14,10 @@
 			<input type="radio" name="mcanswer" value="b">b) A construct used to edit methods<br> 
 			<input type="radio" name="mcanswer" value="c">c) The blueprint for an object<br>
 			<input type="radio" name="mcanswer" value="d">d) A group of snakes	
+		</p> 
+		<p>
+			<input type="submit" value="Check Answer"> 
 		</p>
-	</form>
+	</form> 
 </body>
 </html>

@@ -32,12 +32,15 @@ public class LoginServlet extends HttpServlet {
 		currentUser.setId(currentId);
 		currentUser.setName(currentName); 
 		
+		//Check if user wants to reset 
+		currentUser.checkReset();
+		
 		//Try to find the login information and set as user if it exists
 		try{
-			currentUser.findLogin();  
+				currentUser.findLogin();   
 		} 
 		catch(IOException e){ 
-			System.out.println(e.getMessage());
+			System.out.println("epic fail");
 		}
 		
 		//Create new login if the current information is not found
@@ -54,12 +57,15 @@ public class LoginServlet extends HttpServlet {
 			Cookie loginCookie = new Cookie("loginId", currentId); 
 			loginCookie.setMaxAge(180*60); 
 			response.addCookie(loginCookie); //Response may be added incorrectly 
-			view = request.getRequestDispatcher("login_success.jsp"); 
+			view = request.getRequestDispatcher("login_success.jsp");  
+			view.forward(request, response);		
+		} else if (loginResult.equals("Delete")) { 
+			response.setContentType("text/html"); 
+			response.sendRedirect("reset.html");
 		} else { 
 			view = request.getRequestDispatcher("login_failure.jsp"); 
+			view.forward(request, response);
 		}
-		
-		view.forward(request, response);
 	}
 
 }

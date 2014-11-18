@@ -2,11 +2,22 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>What is a Class?</title>
+	<title>What is a Class?</title> 
+	<link type="text/css" rel="stylesheet" href="style.css">
 </head>
-<body>
-	<div class="navi"></div> 
-	<div> 
+<body> 
+	
+	<div class="menubar"> 
+		<div id="menucontent">
+			<img id="pythonLogo" src="">
+			<div id="menubuttons"> 
+				<button type="button"><a href="progress.jsp">Course Progress</a></button> 
+				<button type="submit" formaction="logoutServlet" formmethod="get">Logout</button>  
+			</div>
+		</div>
+	</div>   
+	
+	<div class="content"> 
 		<h1>What is a Class?</h1> 
 		<ul> 
 			<li>A class is a tool in Python that allows you to logically group data and functions in a convienient package</li> 
@@ -16,7 +27,11 @@
 		</ul> 				
 	</div> 
 	<div class="complete"></div> 
-	<footer> 
-	</footer>
+	
+	<div class="navigator">  
+		<button id="middlebutton" type="button"><a href="progress.jsp">Course Progress</a></button> 
+		<a href="concept2.html"><img id="rightNaviArrow" src="IMAGES/RightArrow.png"></a>
+	</div> 
+	
 </body>
 </html>

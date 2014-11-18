@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.pupil.python.model.Fb;
-import com.pupil.python.model.Mc;
 
 @WebServlet("/FbServlet")
 public class FbServlet extends HttpServlet {
@@ -39,7 +38,7 @@ public class FbServlet extends HttpServlet {
 		Fb userFb = new Fb(); 
 		String fbProg = userFb.loadProgress(loginInUse); //Shouldnt this require try/catch?
 		
-		//Forward the mc1 progress information to the jsp
+		//Forward the fb progress information to the jsp
 		request.setAttribute("fbProgress", fbProg);
 		RequestDispatcher view = request.getRequestDispatcher("fb.jsp");
 		view.forward(request, response);

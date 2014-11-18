@@ -1,8 +1,6 @@
 package com.pupil.python.web;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -55,11 +53,12 @@ public class CheckFbServlet extends HttpServlet {
 		}  
 		
 		//Direct user to appropriate page 
-		if (result.equals("111111")) { 
-			response.sendRedirect("../../../../../../WebContent/fb_correct.html");
+		if (result.equals("111111")) {  
+			response.setContentType("text/html");
+			response.sendRedirect("fb_correct.html");
 		} else { 
-			request.setAttribute("fbEroor", result); 
-			RequestDispatcher view = request.getRequestDispatcher("fb_error.jsp"); 
+			request.setAttribute("fbError", result); 
+			RequestDispatcher view = request.getRequestDispatcher("fb.jsp"); 
 			view.forward(request, response);
 		}
 	}

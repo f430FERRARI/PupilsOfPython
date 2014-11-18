@@ -12,38 +12,37 @@ public abstract class Progress {
 		
 	public String identifier;
 		
-		public String loadProgress(String userId) throws IOException{
+	public String loadProgress(String userId) throws IOException{
 		
-		FileReader fr = new FileReader("../../../../../../WebContent/SAVEFILES/questionprogress.txt");
+		FileReader fr = new FileReader("/Users/mlee43/Desktop/questionprogress.txt");
 		BufferedReader br = new BufferedReader(fr);
-		
+			
 		List<String> tmp = new ArrayList<String>(); 
 		String ch;  
-		
-		    do {
-		        ch = br.readLine();
-		        tmp.add(ch);
-		    } while (ch != null);
-
-		    for(int i=tmp.size()-1;i>=0;i--) {
-		    	String line = tmp.get(i); 
-		    	if (line.contains(identifier)) {  
-		    		String[] parts = tmp.get(i).split("\\$");  
-		    		String[] moreParts = parts[0].split(identifier);  
-		    		if (moreParts[1].equals(userId)) { 
-						return parts[1];
-		    		} 
-		    	}
-		    }
-		} //TODO: Must return a string      
-		
-		public void saveProgress(String toSave, String userId) throws IOException { 
 			
-			String toWrite = identifier + userId + "$" + toSave;
-			FileWriter write = new FileWriter("../../../../../../WebContent/SAVEFILES/questionprogress.txt", true); 
-			PrintWriter print_line = new PrintWriter(write); 
-			print_line.println(toWrite); 
-			print_line.close(); 
-		} 
+			while ((ch = br.readLine()) != null) {
+			    tmp.add(ch);
+			}
+	
+			for(int i=tmp.size()-1;i>=0;i--) {
+			    String line = tmp.get(i); 
+			    if (line.contains(identifier)) {  
+			    	String[] parts = tmp.get(i).split(identifier);  
+			    	if (parts[0].equals(userId)) { 
+						return parts[1];
+			    	} 
+			    }
+			} 
+		return "F";
+	}  
+		
+	public void saveProgress(String toSave, String userId) throws IOException { 
+			
+		String toWrite = userId + identifier + toSave;
+		FileWriter write = new FileWriter("/Users/mlee43/Desktop/questionprogress.txt", true); 
+		PrintWriter print_line = new PrintWriter(write); 
+		print_line.println(toWrite); 
+		print_line.close(); 
+	} 
 
-} 
+}  

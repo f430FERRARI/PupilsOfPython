@@ -1,29 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Class Example</title>
+	<meta charset="UTF-8">
+	<title>Class Example</title> 
+	<link type="text/css" rel="stylesheet" href="style.css">
 </head>
-<body>
-	<div> 
-	<h1>Class Example</h1> 
-	<p>Programming with classes in Python is easy after you get a feel of what it looks like. Here's a basic example of Python code with classes. Don't hesitate to look back at the <a href="">previous page</a> if you're having trouble understanding a line.</p> 
-	<pre>
-	<code> 
-class Classroom: 
-     def __init__(self, room_number, vacant=True) 
-          self.room_number = room_number 
-          self.vacant = vacant 
+<body> 
+	
+	<div class="menubar"> 
+		<div id="menucontent">	
+			<img id="pythonLogo" src=""> 
+			<div id="menubuttons"> 
+				<button type="button"><a href="progress.jsp">Course Progress</a></button> 
+				<button type="submit" formaction="logoutServlet" formmethod="get">Logout</button>
+			</div>
+		</div>
+	</div>   
+	
+	<div class="content"> 
+		<h1>Class Example</h1> 
+		<p>Programming with classes in Python is easy after you get a feel of what it looks like. Here's a basic example of Python code with classes. Don't hesitate to look back at the <a href="concept2.html">previous page</a> if you're having trouble understanding a line.</p> 
+		<pre>
+			<code> 
+				class Classroom: 
+				     def __init__(self, room_number, vacant=True) 
+				          self.room_number = room_number 
+				          self.vacant = vacant 
+				
+				     def is_vacant(self):  
+				          print self.vacant 
+				
+				cpsc_235 = Classroom(176, False)
+				
+				cpsc_235 = is_vacant()
+			</code>  
+		</pre>
+		<p>Now that you've learned all about coding with classes, it's time to give it a try yourself!</p>
+	</div>  
+	
+	<div class="navigator">  
+		<a href="concept2.html"><img id="leftNaviArrow" src="IMAGES/LeftArrow.png"></a>
+		<button type="button"><a href="progress.jsp">Course Progress</a></button> 
+		<a href="warning.html"><img id="rightNaviArrow" src="IMAGES/RightArrow.png"></a>	
+	</div>
 
-     def is_vacant(self):  
-          print self.vacant 
-
-cpsc_235 = Classroom(176, False)
-
-cpsc_235 = is_vacant()
-	</code>  
-	</pre>
-	<p>Now that you've learned all about coding with classes, it's time to give it a try yourself!</p>
-	</div> 
 </body>
 </html>

@@ -1,25 +1,51 @@
 package com.pupil.python.web;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.pupil.python.model.Pr;
+
 @WebServlet("/PrServlet")
 public class PrServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+    private String loginInUse;
+	
     public PrServlet() {
         super();
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		//Get currentUser 
+		Cookie[] cookies = request.getCookies();  
+		if (cookies != null) { 
+			for (int i = 0; i < cookies.length; i++) { 
+				Cookie cookie = cookies[i]; 
+				if (cookie.getName().equals("loginId")) { 
+					loginInUse = cookie.getValue();
+				}
+			}
+		} 
+		
+		//Loads current users PR progress 
+		Pr userPr = new Pr(); 
+		String prProg = userPr.loadProgress(loginInUse); 
+		
+		//Forward the PR progress information to the jsp 
+		request.setAttribute("prProgress", prProg); 
+		RequestDispatcher view = request.getRequestDispatcher("pr.jsp"); 
+		view.forward(request, response);
+	
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 	}
 
 }

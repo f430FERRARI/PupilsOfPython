@@ -48,18 +48,19 @@ public class CheckMcServlet extends HttpServlet {
 		//TODO: mc1answer variable name incorrect. Must also include mc2.
 		
 		//Update course progress and mc progress
-		CourseProgress update = new CourseProgress(); ; 
+		CourseProgress update = new CourseProgress(); 
 		Mc mcUpdate = new Mc();
 		mcUpdate.saveProgress(result, loginInUse); 
 		update.saveProgress(result, "mc1", loginInUse); 
 		
-		//Direct user to appropriate page
-		if (result.equals("1")) { 
-			response.sendRedirect("../../../../../../WebContent/mc1_correct.html");
+		//Direct user to appropriate page 
+		if (result.equals("1")) {  
+			response.setContentType("text/html");
+			response.sendRedirect("mc1_correct.html");
 		} else { 
-			response.sendRedirect("../../../../../../WebContent/mc_error.html");
-		}
-		//TODO: Inquire into filters to fix this.
+			request.setAttribute("mc1Error", result); 
+			RequestDispatcher view = request.getRequestDispatcher("mc1.jsp"); 
+			view.forward(request, response);		}
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

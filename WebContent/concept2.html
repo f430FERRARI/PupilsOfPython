@@ -1,11 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Class Concepts</title>
+	<meta charset="UTF-8">
+	<title>Class Concepts</title> 
+	<link type="text/css" rel="stylesheet" href="style.css">
 </head>
-<body> 
-	<div> 
+<body>  
+	<div class="menubar"> 
+		<div id="menucontent">
+			<img id="pythonLogo" src=""> 
+			<div id="menubuttons"> 
+				<button type="button"><a href="progress.jsp">Course Progress</a></button> 
+				<button type="submit" formaction="logoutServlet" formmethod="get">Logout</button>
+			</div>
+		</div>
+	</div>   
+	<div class="content"> 
 		<h1>Attributes, Methods, __init__ and Self</h1> 
 		<h2>Attributes</h2> 
 		<p>Attributes- Attributes are the things that an object knows. An attribute describes the state or the data of an object. Attributes may be unique for each object. Attributes can be created by the __init__ (double underscore) function.</p> 
@@ -16,6 +26,11 @@
 		<h2>Self</h2> 
 		<p>Self is a parameter that must be the first parameter of every method of a class. It is a keyword that is used by an object to reference itself.</p>
 		<p>Make sure you understand these concepts before you move on!</p>
-	</div> 
+	</div>  
+	<div class="navigator">  
+		<a href="concept1.html" ><img id="leftNaviArrow" src="IMAGES/LeftArrow.png"></a>
+		<button type="button"><a href="progress.jsp">Course Progress</a></button> 
+		<a href="concept3.html"><img id="rightNaviArrow" src="IMAGES/RightArrow.png"></a>
+	</div>
 </body>
 </html>

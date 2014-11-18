@@ -3,17 +3,19 @@ package com.pupil.python.model;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 public class Reset {
 	
 	public void resetProgress() throws IOException{ 
-		File newlogin = new File("../../../../../../WebContent/SAVEFILES/loginlist.txt");
-		FileOutputStream Stream1 = new FileOutputStream(newlogin, false); 
-		Stream1.close(); 
 		
-		File newProgress = new File("../../../../../../WebContent/SAVEFILES/questionprogress.txt"); 
-		FileOutputStream Stream2 = new FileOutputStream(newProgress, false); 
-		Stream2.close();
+		PrintWriter writer = new PrintWriter("/Users/mlee43/Desktop/loginlist.txt", "UTF-8");
+		writer.println("DEFAULT$DONOTDISTURB");
+		writer.close();
+		
+		PrintWriter writer2 = new PrintWriter("/Users/mlee43/Desktop/questionprogress.txt", "UTF-8");
+		writer2.println("!DEFAULT$DONOTDISTURB");
+		writer2.close();
 	}
 }
 	

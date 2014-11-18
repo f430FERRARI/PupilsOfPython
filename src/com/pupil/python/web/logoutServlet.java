@@ -1,22 +1,42 @@
 package com.pupil.python.web;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/CheckPrServlet")
-public class CheckPrServlet extends HttpServlet {
+@WebServlet("/logoutServlet")
+public class logoutServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    public CheckPrServlet() {
+    public logoutServlet() {
         super();
     }
 
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setContentType("text/html"); 
+		Cookie loginCookie = null; 
+		Cookie[] cookies = request.getCookies(); 
+		if (cookies != null) { 
+			for (Cookie cookie : cookies) { 
+				if (cookie.getName().equals("loginId")) { 
+					loginCookie = cookie; 
+					break;
+				}
+			}
+		} 
+		if (loginCookie != null) { 
+			loginCookie.setMaxAge(0); 
+			response.addCookie(loginCookie);
+		} 
+		response.sendRedirect("logout_success.html");
 	}
+
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	}

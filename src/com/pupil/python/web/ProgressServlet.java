@@ -1,7 +1,6 @@
 package com.pupil.python.web;
 
 import java.io.IOException;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,7 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.pupil.python.model.CourseProgress;
-import com.pupil.python.model.Mc;
 
 @WebServlet("/ProgressServlet")
 public class ProgressServlet extends HttpServlet {
@@ -39,7 +37,7 @@ public class ProgressServlet extends HttpServlet {
 		CourseProgress userCourse = new CourseProgress(); 
 		String courseProg = userCourse.loadProgress(loginInUse); 
 		
-		//Forward the mc1 progress information to the jsp 
+		//Forward the progress information to the jsp 
 		request.setAttribute("courseProgress", courseProg); 
 		RequestDispatcher view = request.getRequestDispatcher("progress.jsp"); 
 		view.forward(request, response);

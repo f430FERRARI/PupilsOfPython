@@ -19,13 +19,15 @@ public class ResetServlet extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		//Reset page
 		Reset confirmed = new Reset(); 
 		confirmed.resetProgress(); 
 		
-		response.sendRedirect("../../../../../../WebContent/reset_success.html");
-
+		//Redirect user to successful reset page
+		response.setContentType("text/html");
+		response.sendRedirect("reset_success.html");
 	}
-//TODO: Redirect to successful reset page.
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	}

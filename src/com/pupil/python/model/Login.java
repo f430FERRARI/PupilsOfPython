@@ -1,6 +1,7 @@
 package com.pupil.python.model;
 
 
+import java.io.File;
 import java.io.FileWriter; 
 import java.io.PrintWriter; 
 import java.io.IOException; 
@@ -10,10 +11,8 @@ import java.io.BufferedReader;
 public class Login {
 	private String lastId; 
 	private String lastName; 
-	private Boolean loginStatus; 
-	private String loginResult;
-	//TODO: Test to do 
-	
+	private Boolean loginStatus = false; 
+	public String loginResult;	 
 	
 	public void setName(String name){ 
 		lastName = name; 
@@ -23,50 +22,48 @@ public class Login {
 		lastId = id; 
 	} 
 	
+	public void checkReset() { 
+		if (lastId.equals("000666")) { 					
+			loginStatus = true; 
+			
+			if (lastName.equals("super")){ 
+				loginResult = "Delete"; 
+			}else {  
+				loginResult = "Incorrect name. Please try again.";
+			} //TODO: This is supposed to be outside the while loop
+		}
+	}
+	
 	public void findLogin() throws IOException { 
 		
-		String line = null;
-		
-		FileReader fr = new FileReader("../../../../../../WebContent/SAVEFILES/loginlist.txt"); 
-		@SuppressWarnings("resource")
-		BufferedReader textReader = new BufferedReader(fr);  
-		
-		while ((line = textReader.readLine()) != null) { 
+		if (loginStatus == false) {
+			String line = null;
+			FileReader fr = new FileReader("/Users/mlee43/Desktop/loginlist.txt"); //TODO: Make relative path
+			BufferedReader textReader = new BufferedReader(fr);  
 			
-			String[] parts = line.split("\\$"); 
-			String idPart = parts[0]; 
-			String namePart = parts[1];
-			
-			if (idPart.equals(lastId)) { 
-				loginStatus = true;  
-				this.setUser(namePart);
-				break;
-			
-			}else if (idPart.equals("000666")) { 
-				
-				loginStatus = true; 
-				
-				if (checkName(namePart)){ 
-					loginResult = "Delete"; 
+			while ((line = textReader.readLine()) != null) { 
+					
+				String[] parts = line.split("\\$"); 
+				String idPart = parts[0]; 
+				String namePart = parts[1];
+					
+				if (idPart.equals(lastId)) { 
+					loginStatus = true;  
+					this.setUser(namePart);
+					break;
+					
 				}else {  
-					loginResult = "Incorrect name. Please try again.";
+					loginStatus = false; 
 				}
-				break;
-			
-			}else {  
-				loginStatus = false; 
-			}
+			} //TODO: This requires default line in txt 
 		}
 	}  
-	//Evaluates spaces between two lines of text 
-	//evaluates every single line 
-	//check loginStatus for super
 	
 	public void setUser(String setUserName){ 
 		if (checkName(setUserName)) { 
-			loginResult = "Success! You are now logged in as: " + lastId;
+			loginResult = "Thank you for returning! You are now logged in with the ID number: " + lastId +".";
 		} else { 
-			loginResult = "Incorrect Name. Please try again.";
+			loginResult = "The user ID already exists. The username does not match the user ID. Please enter the correct username or create a new user ID.";
 		}		
 	} 
 	
@@ -83,18 +80,17 @@ public class Login {
 			if (checkValidity() == true) { 
 				try{ 
 					this.saveLogin(); 
-					loginResult = "The new account with ID number:" + lastId + " has been successfully created!"; 
+					loginResult = "The new account with ID number: " + lastId + " has been successfully created."; 
 					//Watch out for this line
 				} 
 				catch(IOException e) { 
 					System.out.println(e.getMessage());
 				}
 			} else {
-				loginResult = "Invalid login. Please only use the numbers 0-9 in your login ID.";
+				loginResult = "The user ID does not meet the required naming conventions. Please only use the numbers 0-9 in your login ID.";
 			}
 		} 
 	} 
-	//TODO: Relocate this if statement to the servlet 
 		
 	public Boolean checkValidity(){ 
 		try { 
@@ -107,11 +103,11 @@ public class Login {
 	
 	public void saveLogin() throws IOException { 
 		String toWrite = lastId + "$" + lastName;
-		FileWriter write = new FileWriter("../../../../../../WebContent/SAVEFILES/loginlist.txt", true); 
+		FileWriter write = new FileWriter("/Users/mlee43/Desktop/loginlist.txt", true); //TODO: Make relative path
 		PrintWriter print_line = new PrintWriter(write); 
 		print_line.println(toWrite); 
 		print_line.close(); 
-	}
+	} //TODO: Lines may not be seperated
 	
 	public String getLoginResult(){ 
 		return loginResult;

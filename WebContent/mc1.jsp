@@ -7,13 +7,31 @@
 	<title>Question #1</title> 
 	<link type="text/css" rel="stylesheet" href="style.css">
 </head>
-<body>
+<body> 
+
+	<% 
+		//Loads user progress
+		String checked = null; 
+		String progress = (String)request.getAttribute("mc1Progress"); 
+		if (progress.equals("1")) { 
+			checked = "checked";
+		}  
+		
+/* 		//Communicates user error 
+		String result = null; 
+		String error = (String)request.getAttribute("mc1Error"); 
+		if (error.equals("0")) { 
+			result = "Incorrect. Please try again.";
+		} */ 
+		//TODO: Fix this issue 
+	%>
+
 	<div class="menubar"> 
 		<div id="menucontent">			
 			<img id="pythonLogo" src="">
 			<div id="menubuttons"> 	
 				<button type="button"><a href="progress.jsp">Course Progress</a></button> 
-				<button type="submit" formaction="logoutServlet" formmethod="get">Logout</button>
+				<button type="button"><a href="logoutServlet">Logout</a></button>
 			</div> 
 		</div>
 	</div>    
@@ -24,21 +42,25 @@
 		<form action="CheckMcServlet" method="get">  
 			<p>What is a class in Python?</p> 
 			<p> 
-				<input type="radio" name="mcanswer" value="a">a) A keyword used to define a special variable that cannot be altered<br> 
-				<input type="radio" name="mcanswer" value="b">b) A construct used to edit methods<br> 
-				<input type="radio" name="mcanswer" value="c">c) The blueprint for an object<br>
-				<input type="radio" name="mcanswer" value="d">d) A group of snakes	
+				<input type="radio" name="mc1answer" value="a">a) A keyword used to define a special variable that cannot be altered<br> 
+				<input type="radio" name="mc1answer" value="b">b) A construct used to edit methods<br> 
+				<input type="radio" name="mc1answer" value="c" <%=checked %>>c) The blueprint for an object<br>
+				<input type="radio" name="mc1answer" value="d">d) A group of snakes	
 			</p> 
 			<p>
 				<input type="submit" value="Save and Submit"> 
 			</p>
-		</form> 
+		</form>   
+		
+		<%-- <br>
+		<p><%= result %></p>
+	 --%>
 	</div> 
 	
 	<div class="navigator">  
-		<a href="progress.jsp"><img id="leftNaviArrow" src="IMAGES/LeftArrow.png"></a>
+		<a href="ProgressServlet"><img id="leftNaviArrow" src="IMAGES/LeftArrow.png"></a>
 		<button type="button"><a href="mc1_answer.html">See Answer</a></button> 
-		<a href="mc2.jsp"><img id="rightNaviArrow" src="IMAGES/RightArrow.png"></a>	
+		<a href="Mc2Servlet"><img id="rightNaviArrow" src="IMAGES/RightArrow.png"></a>	
 	</div>	 
 	
 </body>

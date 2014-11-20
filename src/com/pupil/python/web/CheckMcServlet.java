@@ -19,7 +19,9 @@ import com.pupil.python.model.Mc;
 @WebServlet("/CheckMcServlet")
 public class CheckMcServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private String loginInUse; 
+	private String loginInUse;  
+	private String question;  
+	private String answer;
 	
     public CheckMcServlet() {
         super();
@@ -39,27 +41,33 @@ public class CheckMcServlet extends HttpServlet {
 			}
 		}
 		
-		//Get answer from user
-		String answer = request.getParameter("mcanswer"); 
+		//Get answer from user and set question number
+		if (request.getParameter("mc1answer") != null) {
+			answer = request.getParameter("mc1answer"); 
+			question = "mc1"; 
+		} else if (request.getParameter("mc2answer") != null) { 
+			answer = request.getParameter("mc2answer");
+			question = "mc2";
+		}
 		
 		//Check Answer
 		CheckAnswerMc mcChecker = new CheckAnswerMc(); 
-		String result = mcChecker.checkAnswer(answer);
+		String result = mcChecker.checkAnswer(answer, question);
 		//TODO: mc1answer variable name incorrect. Must also include mc2.
 		
-		//Update course progress and mc progress
+		//Update course progress and mc1 progress
 		CourseProgress update = new CourseProgress(); 
-		Mc mcUpdate = new Mc();
+		Mc mcUpdate = new Mc(question);
 		mcUpdate.saveProgress(result, loginInUse); 
-		update.saveProgress(result, "mc1", loginInUse); 
+		update.saveProgress(result, question, loginInUse); 
 		
 		//Direct user to appropriate page 
 		if (result.equals("1")) {  
 			response.setContentType("text/html");
-			response.sendRedirect("mc1_correct.html");
+			response.sendRedirect(question +"_correct.html");
 		} else { 
-			request.setAttribute("mc1Error", result); 
-			RequestDispatcher view = request.getRequestDispatcher("mc1.jsp"); 
+			request.setAttribute(question + "Error", result); 
+			RequestDispatcher view = request.getRequestDispatcher(question + ".jsp"); 
 			view.forward(request, response);		}
 	}
 

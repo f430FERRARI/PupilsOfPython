@@ -12,12 +12,12 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.pupil.python.model.Mc;
 
-@WebServlet("/McServlet")
-public class McServlet extends HttpServlet {
+@WebServlet("/Mc2Servlet")
+public class Mc2Servlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     public String loginInUse;
 	
-    public McServlet() {
+    public Mc2Servlet() {
         super();
     }
 
@@ -34,13 +34,13 @@ public class McServlet extends HttpServlet {
 			}
 		} 
 		
-		//Loads current users mc1 progress 
-		Mc userMc1 = new Mc("mc1"); 
-		String mc1Prog = userMc1.loadProgress(loginInUse); 
+		//Loads current users mc2 progress 
+		Mc userMc2 = new Mc("mc2"); 
+		String mc2Prog = userMc2.loadProgress(loginInUse); 
 		
-		//Forward the mc1 progress information to the jsp 
-		request.setAttribute("mc1Progress", mc1Prog); 
-		RequestDispatcher view = request.getRequestDispatcher("mc1.jsp"); 
+		//Forward the mc2 progress information to the jsp 
+		request.setAttribute("mc2Progress", mc2Prog); 
+		RequestDispatcher view = request.getRequestDispatcher("mc2.jsp"); 
 		view.forward(request, response);
 	
 	}

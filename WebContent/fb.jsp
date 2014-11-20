@@ -9,12 +9,42 @@
 </head>
 <body>
 
+	<% 
+		String fbProgress = (String)request.getAttribute("fbError"); 
+		char[] questions = fbProgress.toCharArray(); 
+		if (questions[0] == '1') { 
+			mc1 = image1; 
+		} else { 
+			mc1 = image2;
+		} if (questions[1] == '1') { 
+			mc2 = image1; 
+		} else { 
+			mc2 = image2;
+		} if (questions[2] == '1') { 
+			fb = image1; 
+		} else { 
+			fb = image2;
+		} if (questions[3] == '1') { 
+			pr = image1; 
+		} else { 
+			pr = image2;  
+		}if (questions[4] == '1') { 
+			
+		} else { 
+			
+		} if (questions[5] == '1') { 
+			
+		} else { 
+			
+		}
+	%>
+
 	<div class="menubar">  
 		<div id="menucontent">	
 			<img id="pythonLogo" src=""> 
 			<div id="menubuttons"> 		
 				<button type="button"><a href="progress.jsp">Course Progress</a></button> 
-				<button type="submit" formaction="logoutServlet" formmethod="get">Logout</button>
+				<button type="button"><a href="logoutServlet">Logout</a></button>
 			</div>
 		</div>
 	</div>    
@@ -27,17 +57,17 @@
 			<p> 
 				<pre> 
 				<code> 
-	<input type="text" name="fbanswer" value=""> Classroom: 
-	     def __<input type="text" name="fbanswer" value="">__(<input type="text" name="fbanswer" value="">, room_number, vacant=True) 
-	          <input type="text" name="fbanswer" value="">.room_number = room_number 
+	<input type="text" name="fbanswer"> Classroom: 
+	     def __<input type="text" name="fbanswer">__(<input type="text" name="fbanswer" value="">, room_number, vacant=True) 
+	          <input type="text" name="fbanswer">.room_number = room_number 
 	          self.vacant = vacant 
 	
-	     <input type="text" name="fbanswer" value=""> is_vacant(self):  
+	     <input type="text" name="fbanswer"> is_vacant(self):  
 	          print self.vacant 
 	
 	cpsc_235 = Classroom(176, False)
 	
-	cpsc_235 = is_vacant<input type="text" name="fbanswer" value="" size="5">  
+	cpsc_235 = is_vacant<input type="text" name="fbanswer" size="5">  
 				</code> 
 				</pre>
 			</p> 

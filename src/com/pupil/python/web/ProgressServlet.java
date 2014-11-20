@@ -41,7 +41,9 @@ public class ProgressServlet extends HttpServlet {
 		request.setAttribute("courseProgress", courseProg); 
 		RequestDispatcher view = request.getRequestDispatcher("progress.jsp"); 
 		view.forward(request, response);
-	} 
+	}  
+	
+	//TODO: Fix this servlet for new users
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	}

@@ -38,7 +38,7 @@
 	</div>  
 	
 	<div class="navigator"> 
-		<button type="button"><a href="progress.jsp">Let's begin!</a></button>	 
+		<button type="button"><a href="ProgressServlet">Let's begin!</a></button>	 
 	</div>
 
 </body>

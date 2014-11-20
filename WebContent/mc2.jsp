@@ -9,12 +9,21 @@
 </head>
 <body>
 
+	<%
+		//Loads user progress
+		String checked = null; 
+		String progress = (String)request.getAttribute("mc1Progress"); 
+		if (progress.equals("1")) { 
+			checked = "checked";
+		}  
+	%>
+		
 	<div class="menubar"> 
 		<div id="menucontent">				
 			<img id="pythonLogo" src="">
 			<div id="menubuttons"> 				
 				<button type="button"><a href="progress.jsp">Course Progress</a></button> 
-				<button type="submit" formaction="logoutServlet" formmethod="get">Logout</button>
+				<button type="button"><a href="logoutServlet">Logout</a></button>
 			</div>
 		</div>
 	</div>    
@@ -23,13 +32,13 @@
 		
 		<h1>Multiple Choice Question #2</h1> 
 		<p>Please select the best answer for the following question.</p>
-		<form action="" method="GET">  
+		<form action="CheckMcServlet" method="GET">  
 			<p>Why are classes used in Python?</p> 
 			<p> 
-				<input type="radio" name="mcanswer" value="a">a) To group relevant data and functions together<br> 
-				<input type="radio" name="mcanswer" value="b">b) As a means of reducing replacing if statements<br> 
-				<input type="radio" name="mcanswer" value="c">c) Only as a means of debugging code<br>
-				<input type="radio" name="mcanswer" value="d">d) Solely to teach special concepts in Python
+				<input type="radio" name="mc2answer" value="a" <%= checked %>>a) To group relevant data and functions together<br> 
+				<input type="radio" name="mc2answer" value="b">b) As a means of reducing replacing if statements<br> 
+				<input type="radio" name="mc2answer" value="c">c) Only as a means of debugging code<br>
+				<input type="radio" name="mc2answer" value="d">d) Solely to teach special concepts in Python
 			</p> 
 			<p>
 				<input type="submit" value="Check Answer">
@@ -38,9 +47,9 @@
 	</div> 
 	
 	<div class="navigator">  
-		<a href="mc1.jsp"><img id="leftNaviArrow" src="IMAGES/LeftArrow.png"></a>
+		<a href="McServlet"><img id="leftNaviArrow" src="IMAGES/LeftArrow.png"></a>
 		<button type="button"><a href="mc2_answer.html">See Answer</a></button> 
-		<a href="fb.jsp"><img id="rightNaviArrow" src="IMAGES/RightArrow.png"></a>	
+		<a href="FbServlet"><img id="rightNaviArrow" src="IMAGES/RightArrow.png"></a>	
 	</div>		
 	
 </body>

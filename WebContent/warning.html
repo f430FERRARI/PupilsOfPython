@@ -9,7 +9,7 @@
 	
 	<div class="menubar">  
 		<div id="menucontent">	
-		<img id="pythonLogo" src="">
+			<a href="index.jsp" id="pythonLogo"> >_Pupil's of Python</a>
 			<div id="menubuttons"> 
 				<button type="button"><a href=progress.jsp">Course Progress</a></button> 
 				<button type="button"><a href="logoutServlet">Logout</a></button>
@@ -20,12 +20,17 @@
 	<div class="content">  
 		<h1>Congratulations!</h1> 
 		<p>You have now completed all of the lessons about classes in Python. Before you proceed to the questions, feel free to review the concepts we have just covered:</p> 
-		<button type="button"><a href="concept1.html">What is a class?</a></button> 
-		<button type="button"><a href="concept2.html">Attributes, Methods, __init__ and Self</a></button> 
-		<button type="button"><a href="concept2.html">Class Example</a></button>
+		<div id="warnings"> 
+			<button type="button"><a href="concept1.html">What is a class?</a></button> 
+			<button type="button"><a href="concept2.html">Attributes, Methods, __init__ and Self</a></button> 
+			<button type="button"><a href="concept2.html">Class Example</a></button> 
+		</div>
 		<p>Once you are comfortable, you may test yourself and proceed to the questions about classes</p> 
-		<button type="button"><a href="McServlet">I'm ready!</a></button>
-	</div> 
+	</div>  
+
+	<div class="navigator"> 
+		<button type="button" id="middlebutton"><a href="McServlet">&nbsp;&nbsp;&nbsp;&nbsp;I'm ready!&nbsp;&nbsp;&nbsp;&nbsp;</a></button>
+	</div>
 	
 </body>
 </html>

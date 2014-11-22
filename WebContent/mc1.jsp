@@ -59,7 +59,7 @@
 	
 	<div class="navigator">  
 		<a href="ProgressServlet"><img id="leftNaviArrow" src="IMAGES/LeftArrow.png"></a>
-		<button type="button"><a href="mc1_answer.html">See Answer</a></button> 
+		<button type="button" id="middlebutton"><a href="mc1_answer.html">&nbsp;&nbsp;&nbsp;&nbsp;See Answer&nbsp;&nbsp;&nbsp;&nbsp;</a></button> 
 		<a href="Mc2Servlet"><img id="rightNaviArrow" src="IMAGES/RightArrow.png"></a>	
 	</div>	 
 	

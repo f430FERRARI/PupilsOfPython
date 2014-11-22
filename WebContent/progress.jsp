@@ -55,7 +55,7 @@
 		
 	<div class="menubar"> 
 		<div id="menucontent">		
-			<img id="pythonLogo" src="">
+			<a href="index.jsp" id="pythonLogo"> >_Pupil's of Python</a>
 			<div id="menubuttons"> 				
 				<button type="button"><a href="logoutServlet">Logout</a></button>
 			</div>
@@ -74,10 +74,7 @@
 	</div> 
 	
 	<div class="navigator">  
-		 <a class="centerbutton" href="concept1.html">
-    		<span>Continue onto the first lesson...</span>
-    		<span class="info">It's free and installs in seconds</span>
-  		</a>
+		<button type="button" id="middlebutton"><a href="concept1.html">To first lesson</a></button> 
 	</div> 
 	 
 </body>

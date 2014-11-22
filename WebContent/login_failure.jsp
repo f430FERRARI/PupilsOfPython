@@ -15,7 +15,7 @@
 	
 	<div class="menubar"> 
 		<div id="menucontent">	
-			<img id="pythonLogo" src="">
+			<a href="index.jsp" id="pythonLogo"> >_Pupil's of Python</a>
 			<div id="menubuttons"> 	
 				<button type="button"><a href="index.jsp">Homepage</a></button> 
 			</div>

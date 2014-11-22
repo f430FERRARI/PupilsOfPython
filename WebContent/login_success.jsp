@@ -15,7 +15,7 @@
 	
 	<div class="menubar"> 
 		<div id="menucontent">	
-			<img id="pythonLogo" src="">
+			<a href="index.jsp" id="pythonLogo"> >_Pupil's of Python</a>
 			<div id="menubuttons"> 
 				<button type="submit" formaction="logoutServlet" formmethod="get">Logout</button>
 			</div>
@@ -38,7 +38,7 @@
 	</div>  
 	
 	<div class="navigator"> 
-		<button type="button"><a href="ProgressServlet">Let's begin!</a></button>	 
+		<button type="button" id="middlebutton"><a href="ProgressServlet">&nbsp;&nbsp;Let's begin!&nbsp;&nbsp;</a></button>	 
 	</div>
 
 </body>

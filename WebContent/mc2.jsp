@@ -20,7 +20,7 @@
 		
 	<div class="menubar"> 
 		<div id="menucontent">				
-			<img id="pythonLogo" src="">
+			<a href="index.jsp" id="pythonLogo"> >_Pupil's of Python</a>
 			<div id="menubuttons"> 				
 				<button type="button"><a href="progress.jsp">Course Progress</a></button> 
 				<button type="button"><a href="logoutServlet">Logout</a></button>
@@ -48,7 +48,7 @@
 	
 	<div class="navigator">  
 		<a href="McServlet"><img id="leftNaviArrow" src="IMAGES/LeftArrow.png"></a>
-		<button type="button"><a href="mc2_answer.html">See Answer</a></button> 
+		<button type="button" id="middlebutton"><a href="mc2_answer.html">&nbsp;&nbsp;&nbsp;&nbsp;See Answer&nbsp;&nbsp;&nbsp;&nbsp;</a></button> 
 		<a href="FbServlet"><img id="rightNaviArrow" src="IMAGES/RightArrow.png"></a>	
 	</div>		
 	

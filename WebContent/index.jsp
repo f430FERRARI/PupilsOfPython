@@ -10,7 +10,7 @@
 <body>
 	<div class="menubar">  
 		<div id="menucontent">	
-			<img id="pythonLogo" src=""> 
+			<a href="index.jsp" id="pythonLogo"> >_Pupil's of Python</a>
 			<div id="menubuttons"> 			
 				<button type="button"><a href="author.html">About the Author</a></button> 
 			</div>

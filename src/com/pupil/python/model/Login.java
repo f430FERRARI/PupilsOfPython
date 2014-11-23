@@ -38,7 +38,7 @@ public class Login {
 		
 		if (loginStatus == false) {
 			String line = null;
-			FileReader fr = new FileReader("/Users/mlee43/Desktop/loginlist.txt"); //TODO: Make relative path
+			FileReader fr = new FileReader("/home/ugd/mmllee/Desktop/loginlist.txt"); //TODO: !@#$
 			BufferedReader textReader = new BufferedReader(fr);  
 			
 			while ((line = textReader.readLine()) != null) { 
@@ -103,7 +103,7 @@ public class Login {
 	
 	public void saveLogin() throws IOException { 
 		String toWrite = lastId + "$" + lastName;
-		FileWriter write = new FileWriter("/Users/mlee43/Desktop/loginlist.txt", true); //TODO: Make relative path
+		FileWriter write = new FileWriter("/home/ugd/mmllee/Desktop/loginlist.txt", true); //TODO: !@#$
 		PrintWriter print_line = new PrintWriter(write); 
 		print_line.println(toWrite); 
 		print_line.close(); 

@@ -68,7 +68,7 @@
 		<p><a href="concept2.html">Attributes, Methods, __init__ and Self</a></p>
 		<p><a href="concept3.html">Class Example</a></p> 
 		<p><%= mc1 %><a href="McServlet">Multiple Choice #1</a></p> 
-		<p><%= mc2 %><a href="mc2.jsp">Multiple Choice #2</a></p>
+		<p><%= mc2 %><a href="Mc2Servlet">Multiple Choice #2</a></p>
 		<p><%= fb %><a href="FbServlet">Fill-in-the-Blank</a></p>
 		<p><%= pr %><a href="pr.jsp">Programming Question</a></p>
 	</div> 

@@ -17,16 +17,18 @@
 		</div>
 	</div>   
 	
-	<div class="content">
-		<form action="LoginServlet" method="post"> 
-			<p>
-				User ID: <input type="text" name="id" maxlength="6"><br> 
-				   Name: <input type="text" name="name" size="22">
-			</p>
-			<p>
-				<input type="submit" value="Login">
-			</p>	
-		</form> 
+	<div class="content">	
+		<div id="login">	
+			<form action="LoginServlet" method="post"> 
+				<p>
+					User ID: <input type="text" name="id" maxlength="6"><br> 
+					   Name: <input type="text" name="name" size="22">
+				</p>
+				<p>
+					<input type="submit" value="Login">
+				</p>	
+			</form>  
+		</div>
 	</div>
 </body> 
 

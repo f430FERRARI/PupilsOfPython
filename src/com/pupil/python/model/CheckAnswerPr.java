@@ -1,6 +1,7 @@
 package com.pupil.python.model;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -11,10 +12,11 @@ public class CheckAnswerPr{
 	private String result; 
 
 	
-	public String checkAnswer(String path) throws IOException { 
+	public String checkAnswer(String path, String name) throws IOException { 
 		
 		//Run the Python code
-		ProcessBuilder codeTest = new ProcessBuilder("python",path);
+		ProcessBuilder codeTest = new ProcessBuilder("python",path + File.separator
+                + name);
 		codeTest.redirectErrorStream(true);
 		Process process = codeTest.start(); 
 		

@@ -10,12 +10,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.pupil.python.model.CourseProgress;
 import com.pupil.python.model.Pr;
 
 @WebServlet("/PrServlet")
 public class PrServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    private String loginInUse;
+    private String loginInUse;  
+    private String prProg;
 	
     public PrServlet() {
         super();
@@ -35,8 +37,16 @@ public class PrServlet extends HttpServlet {
 		} 
 		
 		//Loads current users PR progress 
-		Pr userPr = new Pr(); 
-		String prProg = userPr.loadProgress(loginInUse); 
+		CourseProgress userPr = new CourseProgress(); 
+		String prog = userPr.loadProgress(loginInUse);  
+		char[] questions = prog.toCharArray();  
+		
+		char tempProg;
+		if(questions[0] == 'F') { 
+			prProg = "0"; 
+		} else if (questions[3] == '1') { 
+			prProg = "1";
+		} 
 		
 		//Forward the PR progress information to the jsp 
 		request.setAttribute("prProgress", prProg); 

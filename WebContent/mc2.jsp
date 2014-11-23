@@ -12,7 +12,7 @@
 	<%
 		//Loads user progress
 		String checked = null; 
-		String progress = (String)request.getAttribute("mc1Progress"); 
+		String progress = (String)request.getAttribute("mc2Progress"); 
 		if (progress.equals("1")) { 
 			checked = "checked";
 		}  

@@ -18,17 +18,30 @@
 	</div>   
 	
 	<div class="content">	
+		<h1>Welcome to Pupil's of Python</h1>
 		<div id="login">	
 			<form action="LoginServlet" method="post"> 
 				<p>
-					User ID: <input type="text" name="id" maxlength="6"><br> 
+					User ID: <input type="text" name="id" maxlength="6" size="22"><br> 
 					   Name: <input type="text" name="name" size="22">
 				</p>
 				<p>
-					<input type="submit" value="Login">
+					<input id="loginbutton" type="submit" value="Create Login/Login">
 				</p>	
 			</form>  
-		</div>
+		</div> 
+		<div id="pythons">
+				<img src="IMAGES/pythonSMALL.png"> 
+				<img src="IMAGES/pythonSMALL.png"> 
+				<img src="IMAGES/pythonSMALL.png"> 
+				<img id="pyBig" src="IMAGES/pythonBIG.png">  
+		</div>   
+	</div>
+	<div id="des">
+		<div id="descontent"> 
+			<h1>Let's learn about classes!</h1> 
+			<p>In this tutorial, we will be learning about classes in the Python programming language. After a few short lessons, you will be able test your knowledge about classes and write your own program using classes.</p>
+		</div>  
 	</div>
 </body> 
 

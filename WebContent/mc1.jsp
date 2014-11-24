@@ -13,16 +13,20 @@
 		//Loads user progress
 		String checked = null; 
 		String progress = (String)request.getAttribute("mc1Progress"); 
-		if (progress.equals("1")) { 
-			checked = "checked";
-		}  
+		if (progress != null) {
+			if (progress.equals("1")) { 
+				checked = "checked";
+			} 
+		}
 		
-/* 		//Communicates user error 
+		//Communicates user error 
 		String result = null; 
 		String error = (String)request.getAttribute("mc1Error"); 
-		if (error.equals("0")) { 
-			result = "Incorrect. Please try again.";
-		} */ 
+		if (error != null) {
+			if (error.equals("0")) { 
+				result = "Incorrect. Please \try again.";
+			}   
+		}
 		//TODO: Fix this issue 
 	%>
 
@@ -51,10 +55,8 @@
 				<input type="submit" value="Save and Submit"> 
 			</p>
 		</form>   
-		
-		<%-- <br>
-		<p><%= result %></p>
-	 --%>
+		<br>
+			<p><%= result %></p>
 	</div> 
 	
 	<div class="navigator">  

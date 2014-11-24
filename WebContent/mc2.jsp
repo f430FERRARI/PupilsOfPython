@@ -13,9 +13,20 @@
 		//Loads user progress
 		String checked = null; 
 		String progress = (String)request.getAttribute("mc2Progress"); 
-		if (progress.equals("1")) { 
-			checked = "checked";
-		}  
+		if (progress != null) {
+			if (progress.equals("1")) { 
+				checked = "checked";
+			}  
+		} 
+		
+		//Comminucates user error
+		String result = null; 
+		String error = (String)request.getAttribute("mc2Error"); 
+		if (error != null) {
+			if (error.equals("0")) { 
+				result =  "Incorrect. Please \try again.";
+			}   
+		}
 	%>
 		
 	<div class="menubar"> 
@@ -44,8 +55,9 @@
 				<input type="submit" value="Check Answer">
 			</p>
 		</form>
-	</div> 
-	
+	</div>  
+	<br>
+		<p><%= result %></p>
 	<div class="navigator">  
 		<a href="McServlet"><img id="leftNaviArrow" src="IMAGES/LeftArrow.png"></a>
 		<button type="button" id="middlebutton"><a href="mc2_answer.html">&nbsp;&nbsp;&nbsp;&nbsp;See Answer&nbsp;&nbsp;&nbsp;&nbsp;</a></button> 

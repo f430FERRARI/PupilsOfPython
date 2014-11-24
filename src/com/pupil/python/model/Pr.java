@@ -16,7 +16,8 @@ import javax.servlet.http.Part;
 public class Pr extends Progress{
 
 	private String prPath; 
-	private String uploadResult;
+	private String uploadResult; 
+	private String status; 
 	
 	public String loadProgress() throws IOException { 
 		
@@ -34,6 +35,13 @@ public class Pr extends Progress{
 		OutputStream out = null;
 	    InputStream filecontent = null;
 
+	    //Check if file is a .py file
+	    if ((fileName.contains(".py")) == false) { 
+	    	uploadResult = "You must upload a .py file.";  
+	    	status = "0";
+	    	return status;
+	    }
+	    
 	    try {
 	        out = new FileOutputStream(new File(path + File.separator
 	                + fileName));
@@ -45,12 +53,13 @@ public class Pr extends Progress{
 	        while ((read = filecontent.read(bytes)) != -1) {
 	            out.write(bytes, 0, read);
 	        }
-	        uploadResult = "New file " + fileName + " created at " + path;
+	        uploadResult = "New file " + fileName + " created at " + path; 
+	        status = "1";
 	    } catch (FileNotFoundException fne) {
 	        uploadResult = "You either did not specify a file to upload or are "
 	                + "trying to upload a file to a protected or nonexistent "
 	                + "location.<br/> ERROR: " + fne.getMessage();
-
+	        status = "0";
 	    } finally {
 	        if (out != null) {
 	            out.close();
@@ -58,7 +67,7 @@ public class Pr extends Progress{
 	        if (filecontent != null) {
 	            filecontent.close();
 	        } 
-	        return uploadResult;
+	        return status;
 	    }
 	} 
 	
@@ -71,5 +80,9 @@ public class Pr extends Progress{
 	        }
 	    }
 	    return null;
+	} 
+	
+	public String getUploadResult() { 
+		return uploadResult;
 	}
 }

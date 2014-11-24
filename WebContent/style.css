@@ -63,10 +63,11 @@ a:hover, a:active, a:focus {
 }
 
 .content {  
-	margin-top: 50px;   
+	margin-top: 75px;   
 	margin-right: auto; 
 	margin-left: auto;
-	width: 900px;
+	width: 900px; 
+	position: relative;
 }
 
 #menucontent { 
@@ -144,5 +145,54 @@ a:hover, a:active, a:focus {
 	left: 235px; 
 	margin-top: 30px; 
 	margin-bottom: 30px;
+} 
+
+#login { 
+	background-color: #474747; 
+	width: 202px;    
+	padding-left: 25px; 
+	padding-top: 5px; 
+	padding-right: 25px; 
+	position: relative;  
+	left: 200px; 
+	top: 40px;
+	
+} 
+
+#loginbutton { 
+	width: 202px; 
+	border-radius: 0px; 
+	background-color: #99CC00; 
+	position: relative; 
+	right: 25px; 
+	font-size: 125% 
+} 
+
+
+
+#pythons {   
+	position:relative; 
+	bottom: 140px;
+}  
+
+#pyBig {  
+	position: relative; 
+	bottom: -32px;
+}
+
+#des { 
+	background-color: #474747; 
+	width: 100%;   
+	position: relative; 
+	bottom: 168px; 
+	padding-top: 50px; 
+	padding-bottom: 50px;
+}   
+
+#descontent {  
+	width: 900px; 
+	margin-left: auto; 
+	margin-right: auto; 
+	margin-top: 0px; 
 } 
 

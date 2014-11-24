@@ -14,7 +14,7 @@ public abstract class Progress {
 		
 	public String loadProgress(String userId) throws IOException{
 		
-		FileReader fr = new FileReader("/home/ugd/mmllee/Desktop/questionprogress.txt");
+		FileReader fr = new FileReader("/Users/mlee43/Desktop/questionprogress.txt"); //TODO: !@#$
 		BufferedReader br = new BufferedReader(fr);
 			
 		List<String> tmp = new ArrayList<String>(); 
@@ -39,7 +39,7 @@ public abstract class Progress {
 	public void saveProgress(String toSave, String userId) throws IOException { 
 			
 		String toWrite = userId + identifier + toSave;
-		FileWriter write = new FileWriter("/home/ugd/mmllee/Desktop/questionprogress.txt", true); 
+		FileWriter write = new FileWriter("/Users/mlee43/Desktop/questionprogress.txt", true); //TODO: !@#$
 		PrintWriter print_line = new PrintWriter(write); 
 		print_line.println(toWrite); 
 		print_line.close(); 

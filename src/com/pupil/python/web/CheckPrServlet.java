@@ -28,7 +28,7 @@ import com.pupil.python.model.Pr;
 @MultipartConfig //Watch this 
 public class CheckPrServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;  
-	private String foldPath = "/home/ugd/mmllee/Desktop/PRSAVES";  
+	private String foldPath = "/Users/mlee43/Desktop/PRSAVES";  //TODO: !@#$
 	private String fileName;
 	private String loginInUse;  
 	private String codeLoco; 
@@ -54,41 +54,44 @@ public class CheckPrServlet extends HttpServlet {
 			}
 		} 
 
-		response.setContentType("text/html;charset=UTF-8");
-
 	    //Get file and filename
 	    final Part filePart = request.getPart("file");
 
 	    //Get file name and save uploaded file 
 	    Pr prSaver = new Pr();  
-	    fileName = prSaver.getFileName(filePart);
+	    fileName = loginInUse + prSaver.getFileName(filePart);
 	    uploadResult = prSaver.saveFile(foldPath, filePart, fileName);
 	    
-	    //Check programming answer 
-	    CheckAnswerPr prChecker = new CheckAnswerPr(); 
-	    String result = prChecker.checkAnswer(foldPath, fileName);
-	
-		//Update course progress
-		CourseProgress update = new CourseProgress(); 
-		if (result.equals("1")) { 
-			update.saveProgress("1", "pr", loginInUse);
-		} else { 
-			update.saveProgress("0", "pr", loginInUse);
-		}
+	    //Delegate based on upload result
+	    if (uploadResult.equals("1")){
+		    //Check programming answer 
+		    CheckAnswerPr prChecker = new CheckAnswerPr(); 
+		    String result = prChecker.checkAnswer(foldPath, fileName);
 		
-		//Direct user based on answer result 
-		if (result.equals("1")) { 
-			response.setContentType("text/html"); 
-			response.sendRedirect("pr_correct.html"); 
-		} else { 
-			request.setAttribute("prError", result); 
+			//Update course progress
+			CourseProgress update = new CourseProgress(); 
+			if (result.equals("1")) { 
+				update.saveProgress("1", "pr", loginInUse);
+			} else { 
+				update.saveProgress("0", "pr", loginInUse);
+			}
+			
+			//Direct user based on answer result 
+			if (result.equals("1")) { 
+				response.setContentType("text/html"); 
+				response.sendRedirect("pr_correct.html"); 
+			} else { 
+				request.setAttribute("prError", result); 
+				RequestDispatcher view = request.getRequestDispatcher("pr.jsp"); 
+				view.forward(request, response);
+			}  
+	    } else { 
+	    	request.setAttribute("uploadError", prSaver.getUploadResult()); 
 			RequestDispatcher view = request.getRequestDispatcher("pr.jsp"); 
 			view.forward(request, response);
-		} 
+	    }
 	}  
-	//TODO: must distinguish user 
 	//TODO: why doesnt it go to do the check
-	
 
 }
  

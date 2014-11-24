@@ -10,35 +10,39 @@
 <body>
 
 	<% 
+		String b1;  
+		String b2; 
+		String b3; 
+		String b4; 
+		String b5; 
+		String b6; 
+	
 		String fbProgress = (String)request.getAttribute("fbError"); 
 		char[] questions = fbProgress.toCharArray(); 
 		if (questions[0] == '1') { 
-			mc1 = image1; 
-		} else { 
-			mc1 = image2;
-		} if (questions[1] == '1') { 
-			mc2 = image1; 
-		} else { 
-			mc2 = image2;
+			b1 = "value=\"class\"";
+		}
+ 		if (questions[1] == '1') { 
+			b2 = "value=\"__init__\"";
 		} if (questions[2] == '1') { 
-			fb = image1; 
-		} else { 
-			fb = image2;
-		} if (questions[3] == '1') { 
-			pr = image1; 
-		} else { 
-			pr = image2;  
-		}if (questions[4] == '1') { 
-			
-		} else { 
-			
-		} if (questions[5] == '1') { 
-			
-		} else { 
-			
+			b3 = "value=\"self\""; 
+		}  
+		if (questions[3] == '1') { 
+			b4 = "value=\"self\"";
+		}  
+		if (questions[4] == '1') { 
+			b5 = "value=\"def\"";
+		}  
+		if (questions[5] == '1') { 
+			b6="value=\"()\"";
 		}
 	%>
-
+<%=b1 %> 
+<%=b2 %> 
+<%=b3 %> 
+<%=b4 %> 
+<%=b5 %> 
+<%=b6 %>
 	<div class="menubar">  
 		<div id="menucontent">	
 			<img id="pythonLogo" src=""> 

@@ -9,24 +9,18 @@
 </head>
 <body>
 
-	<%
+	<% 
 		//Loads user progress
 		String checked = null; 
 		String progress = (String)request.getAttribute("mc2Progress"); 
 		if (progress != null) {
 			if (progress.equals("1")) { 
 				checked = "checked";
-			}  
-		} 
-		
-		//Comminucates user error
-		String result = null; 
-		String error = (String)request.getAttribute("mc2Error"); 
-		if (error != null) {
-			if (error.equals("0")) { 
-				result =  "Incorrect. Please \try again.";
-			}   
+			} 
 		}
+		
+		//Loads user error 
+		String error = (String)request.getAttribute("mc2Error"); 
 	%>
 		
 	<div class="menubar"> 
@@ -40,11 +34,11 @@
 	</div>    
 	
 	<div class="content"> 
-		
 		<h1>Multiple Choice Question #2</h1> 
 		<p>Please select the best answer for the following question.</p>
-		<form action="CheckMcServlet" method="GET">  
-			<p>Why are classes used in Python?</p> 
+		<form action="CheckMcServlet" method="GET">   
+			<br>
+			<h2>Why are classes used in Python?</h2> 
 			<p> 
 				<input type="radio" name="mc2answer" value="a" <%= checked %>>a) To group relevant data and functions together<br> 
 				<input type="radio" name="mc2answer" value="b">b) As a means of reducing replacing if statements<br> 
@@ -54,10 +48,24 @@
 			<p>
 				<input type="submit" value="Check Answer">
 			</p>
-		</form>
+		</form> 
+		<br>
+		<% 
+			if (error != null) {
+				if (error.equals("0")) {  
+					%>
+					<p style="color:red;">Incorrect. Please try again.</p>
+					<%
+				}   
+			}
+			if (checked == "checked"){ 
+				%> 
+				<h2><img id="complete" alt="complete" src="/IMAGES/complete.png">You have already complete this question</h2>
+				<%
+			}
+		%> 
 	</div>  
-	<br>
-		<p><%= result %></p>
+	
 	<div class="navigator">  
 		<a href="McServlet"><img id="leftNaviArrow" src="IMAGES/LeftArrow.png"></a>
 		<button type="button" id="middlebutton"><a href="mc2_answer.html">&nbsp;&nbsp;&nbsp;&nbsp;See Answer&nbsp;&nbsp;&nbsp;&nbsp;</a></button> 

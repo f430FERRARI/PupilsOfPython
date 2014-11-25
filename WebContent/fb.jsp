@@ -10,42 +10,70 @@
 <body>
 
 	<% 
-		String b1;  
-		String b2; 
-		String b3; 
-		String b4; 
-		String b5; 
-		String b6; 
+		//Declare variables for the blanks
+		String b1 = "";  
+		String b2 = ""; 
+		String b3 = ""; 
+		String b4 = ""; 
+		String b5 = ""; 
+		String b6 = ""; 
 	
-		String fbProgress = (String)request.getAttribute("fbError"); 
-		char[] questions = fbProgress.toCharArray(); 
-		if (questions[0] == '1') { 
-			b1 = "value=\"class\"";
-		}
- 		if (questions[1] == '1') { 
-			b2 = "value=\"__init__\"";
-		} if (questions[2] == '1') { 
-			b3 = "value=\"self\""; 
-		}  
-		if (questions[3] == '1') { 
-			b4 = "value=\"self\"";
-		}  
-		if (questions[4] == '1') { 
-			b5 = "value=\"def\"";
-		}  
-		if (questions[5] == '1') { 
-			b6="value=\"()\"";
+		//Load user errors
+		String fbError = (String)request.getAttribute("fbError"); 
+		if (fbError != null) { 
+			char[] questions = fbError.toCharArray(); 
+			if (questions[0] == '1') { 
+				b1 = "value=\"class\"";
+			} else { 
+				b1 = "style=\"color:red;\" value=\"Incorrect\"";
+			} if (questions[1] == '1') { 
+				b2 = "value=\"__init__\"";
+			} else {  
+				b2 = "style=\"color:red;\" value=\"Incorrect\"";
+			} if (questions[2] == '1') { 
+				b3 = "value=\"self\""; 
+			} else { 
+				b3 = "style=\"color:red;\" value=\"Incorrect\"";
+			} if (questions[3] == '1') { 
+				b4 = "value=\"self\"";
+			} else { 
+				b4 = "style=\"color:red;\" value=\"Incorrect\"";
+			} if (questions[4] == '1') { 
+				b5 = "value=\"def\"";
+			} else { 
+				b5 = "style=\"color:red;\" value=\"Incorrect\"";
+			} if (questions[5] == '1') { 
+				b6="value=\"()\"";
+			} else { 
+				b6 = "style=\"color:red;\" value=\"Incorrect\"";
+			} 
+		} 
+		
+		//Load user progress
+		String progress = (String)request.getAttribute("fbProgress"); 
+		if (progress != null) { 
+			char[] questions = progress.toCharArray(); 
+			if (questions[0] != 'F') {
+				if (questions[0] == '1') { 
+					b1 = "value=\"class\"";
+				} if (questions[1] == '1') { 
+					b2 = "value=\"__init__\"";
+				} if (questions[2] == '1') { 
+					b3 = "value=\"self\""; 
+				} if (questions[3] == '1') { 
+					b4 = "value=\"self\"";
+				} if (questions[4] == '1') { 
+					b5 = "value=\"def\"";
+				} if (questions[5] == '1') { 
+					b6="value=\"()\"";
+				}  
+			}
 		}
 	%>
-<%=b1 %> 
-<%=b2 %> 
-<%=b3 %> 
-<%=b4 %> 
-<%=b5 %> 
-<%=b6 %>
+
 	<div class="menubar">  
 		<div id="menucontent">	
-			<img id="pythonLogo" src=""> 
+			<a href="index.jsp" id="pythonLogo"> >_Pupil's of Python</a>
 			<div id="menubuttons"> 		
 				<button type="button"><a href="progress.jsp">Course Progress</a></button> 
 				<button type="button"><a href="logoutServlet">Logout</a></button>
@@ -61,22 +89,39 @@
 			<p> 
 				<pre> 
 				<code> 
-	<input type="text" name="fbanswer"> Classroom: 
-	     def __<input type="text" name="fbanswer">__(<input type="text" name="fbanswer" value="">, room_number, vacant=True) 
-	          <input type="text" name="fbanswer">.room_number = room_number 
+	<input type="text" name="fbanswer" <%= b1 %>> Classroom: 
+	     def __<input type="text" name="fbanswer" <%=b2 %> >__(<input type="text" name="fbanswer" <%=b3 %>>, room_number, vacant=True) 
+	          <input type="text" name="fbanswer" <%=b4 %> >.room_number = room_number 
 	          self.vacant = vacant 
 	
-	     <input type="text" name="fbanswer"> is_vacant(self):  
+	     <input type="text" name="fbanswer" <%=b5 %>> is_vacant(self):  
 	          print self.vacant 
 	
 	cpsc_235 = Classroom(176, False)
 	
-	cpsc_235 = is_vacant<input type="text" name="fbanswer" size="5">  
+	cpsc_235 = is_vacant<input type="text" name="fbanswer" size="10" <%=b6 %>>  
 				</code> 
 				</pre>
 			</p> 
 			<input type="submit" value="Save and Submit">
-		</form>
+		</form> 
+		<br> 
+		<% 
+			if (progress != null){  
+				if (progress.equals("111111")) { 
+					%> 
+					<h2><img id="complete" alt="complete" src="/IMAGES/complete.png">You have already complete this question</h2>
+					<% 
+				}
+			} 
+			if (fbError != null) { 
+				if (!fbError.equals("111111")) { 
+					%> 
+					<p style="color:red;">Incorrect. There was one or more errors.</p>
+					<% 
+				}
+			}
+		%> 
 	</div> 
 	
 	<div class="navigator">  

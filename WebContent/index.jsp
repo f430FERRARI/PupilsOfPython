@@ -12,7 +12,7 @@
 		<div id="menucontent">	
 			<a href="index.jsp" id="pythonLogo"> >_Pupil's of Python</a>
 			<div id="menubuttons"> 			
-				<button type="button"><a href="author.html">About the Author</a></button> 
+				<button type="button"><a href="https://www.linkedin.com/profile/view?id=306129325&trk=nav_responsive_tab_profile">About the Author</a></button> 
 			</div>
 		</div>
 	</div>   

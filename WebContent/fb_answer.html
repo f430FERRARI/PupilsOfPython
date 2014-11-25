@@ -9,7 +9,7 @@
 
 	<div class="menubar">  
 		<div id="menucontent">	
-			<img id="pythonLogo" src="">
+			<a href="index.jsp" id="pythonLogo"> >_Pupil's of Python</a>
 			<div id="menubuttons"> 
 				<button type="button"><a href="progress.jsp">Course Progress</a></button> 
 				<button type="button"><a href="logoutServlet">Logout</a></button>
@@ -17,13 +17,31 @@
 		</div>
 	</div>    
 	
-	<div class="content"> 
-
+	<div class="content">  
+		<h1>Solution for the Fill-in-the-Blank:</h1> 
+		<br>
+		<p>Here is the solution to the fill-in-the-blank question:</p>
+		<pre>
+			<code> 
+	<span id="fbans">class</span> Classroom: 
+		def <span id="fbans">__init__</span>(<span id="fbans">self</span>, room_number, vacant=True) 
+			<span id="fbans">self</span>.room_number = room_number 
+			self.vacant = vacant 
+				
+		<span id="fbans">def</span> is_vacant(self):  
+			print self.vacant 
+				
+	cpsc_235 = Classroom(176, False)
+				
+	cpsc_235 = is_vacant<span id="fbans">()</span>
+			</code>  
+		</pre> 
+		<p>Feel free to try the question again or to move onto the next question.</p>
 	</div> 
 	
 	<div class="navigator">  
-		<button type="button" id="middlebutton"><a href="fb.jsp">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Try Again&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></button> 
-		<img id="rightNaviArrow" href="pr.jsp" src="IMAGES/RightArrow.png">
+		<button type="button" id="middlebutton"><a href="FbServlet">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Try Again&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></button> 
+		<a href="PrServlet"><img id="rightNaviArrow" src="IMAGES/RightArrow.png"></a>
 	</div>		
 
 </body>

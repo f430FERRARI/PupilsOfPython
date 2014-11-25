@@ -19,20 +19,13 @@
 			} 
 		}
 		
-		//Communicates user error 
-		String result = null; 
+		//Loads user error 
 		String error = (String)request.getAttribute("mc1Error"); 
-		if (error != null) {
-			if (error.equals("0")) { 
-				result = "Incorrect. Please \try again.";
-			}   
-		}
-		//TODO: Fix this issue 
 	%>
 
 	<div class="menubar"> 
 		<div id="menucontent">			
-			<img id="pythonLogo" src="">
+			<a href="index.jsp" id="pythonLogo"> >_Pupil's of Python</a>
 			<div id="menubuttons"> 	
 				<button type="button"><a href="progress.jsp">Course Progress</a></button> 
 				<button type="button"><a href="logoutServlet">Logout</a></button>
@@ -43,8 +36,9 @@
 	<div class="content"> 		
 		<h1>Multiple Choice Question #1</h1> 
 		<p>Please select the best answer for the following question.</p>
-		<form action="CheckMcServlet" method="get">  
-			<p>What is a class in Python?</p> 
+		<form action="CheckMcServlet" method="get">   
+			<br>
+			<h2>What is a class in Python?</h2> 
 			<p> 
 				<input type="radio" name="mc1answer" value="a">a) A keyword used to define a special variable that cannot be altered<br> 
 				<input type="radio" name="mc1answer" value="b">b) A construct used to edit methods<br> 
@@ -56,7 +50,20 @@
 			</p>
 		</form>   
 		<br>
-			<p><%= result %></p>
+		<% 
+			if (error != null) {
+				if (error.equals("0")) {  
+					%>
+					<p style="color:red;">Incorrect. Please try again.</p>
+					<%
+				}   
+			}
+			if (checked == "checked"){ 
+				%> 
+				<h2><img id="complete" alt="complete" src="/IMAGES/complete.png">You have already complete this question</h2>
+				<%
+			}
+		%> 
 	</div> 
 	
 	<div class="navigator">  

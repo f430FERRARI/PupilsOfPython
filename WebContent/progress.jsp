@@ -21,8 +21,8 @@
 		String pr = null;  		
 		
 		//Set paths to images 
-		String image1 = "<img alt=\"check\" src=\"IMAGES/complete.png\">"; 
-		String image2 = "<img alt=\"uncheck\" src=\"IMAGES/incomplete.png\">";
+		String image1 = "<img id=\"complete\" alt=\"check\" src=\"IMAGES/complete.png\">"; 
+		String image2 = "<img id=\"complete\" alt=\"uncheck\" src=\"IMAGES/incomplete.png\">";
 		
 		//Set the image based on the result of each question
 		String cp = (String)request.getAttribute("courseProgress"); 		
@@ -62,15 +62,16 @@
 		</div>
 	</div>    
 	
-	<div class="content"> 
-		<h1></h1>  
-		<p><a href="concept1.html">What is a Class?</a></p>
-		<p><a href="concept2.html">Attributes, Methods, __init__ and Self</a></p>
-		<p><a href="concept3.html">Class Example</a></p> 
-		<p><%= mc1 %><a href="McServlet">Multiple Choice #1</a></p> 
-		<p><%= mc2 %><a href="Mc2Servlet">Multiple Choice #2</a></p>
-		<p><%= fb %><a href="FbServlet">Fill-in-the-Blank</a></p>
-		<p><%= pr %><a href="pr.jsp">Programming Question</a></p>
+	<div class="content">  
+		<h1>Course Progress</h1> 
+		<p>There is always plenty to learn about classes. Here is your course progress thus far. Take your time and make sure you have these concepts down!</p>  
+		<p><img alt="study" src="IMAGES/study.png" id="complete">&nbsp;&nbsp;<a href="concept1.html">What is a Class?</a></p>
+		<p><img alt="study" src="IMAGES/study.png" id="complete">&nbsp;&nbsp;<a href="concept2.html">Attributes, Methods, __init__ and Self</a></p>
+		<p><img alt="study" src="IMAGES/study.png" id="complete">&nbsp;&nbsp;<a href="concept3.html">Class Example</a></p> 
+		<p><%= mc1 %>&nbsp;&nbsp;<a href="McServlet">Multiple Choice #1</a></p> 
+		<p><%= mc2 %>&nbsp;&nbsp;<a href="Mc2Servlet">Multiple Choice #2</a></p>
+		<p><%= fb %>&nbsp;&nbsp;<a href="FbServlet">Fill-in-the-Blank</a></p>
+		<p><%= pr %>&nbsp;&nbsp;<a href="pr.jsp">Programming Question</a></p>
 	</div> 
 	
 	<div class="navigator">  

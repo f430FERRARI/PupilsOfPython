@@ -18,12 +18,41 @@
 	</div>    
 	
 	<div class="content"> 
-
+		<h1>Solution for the Programming Question</h1> 
+		<br>
+		<p>Here is one of the possible solutions for the programming question:</p>
+		<pre>
+			<code> 
+	def boys_and_girls(): 
+		with open("/Users/mlee43/Desktop/PRSAVES/names.txt", 'r') as f:
+			for line in f:
+			    if 'Ms.' in line:
+			        return line    
+	
+	student= boys_and_girls()
+	
+	class Pupil: 
+		def __init__(self, name, favorite_subject):
+			self.name = name 
+			self.favorite_subject = favorite_subject 
+		def attendance(self): 
+			print "Present! " + self.name + " is here!" 
+		def class_list(self): 
+			text_file = open("class_list.txt", "w")
+			text_file.write(self.name + ", " + self.favorite_subject)
+			text_file.close()	 
+	
+	the_girl = Pupil(student, "math") 
+	the_girl.attendance()
+	the_girl.class_list()
+			</code>  
+		</pre> 
+		<p>Feel free to try the question again or to move onto the next question.</p>		
 	</div> 
 	
 	<div class="navigator">  
-		<button type="button" id="middlebutton"><a href="pr.jsp">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Try Again&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></button> 
-		<img id="rightNaviArrow" href="fb.jsp" src="IMAGES/RightArrow.png">
+		<button type="button" id="middlebutton"><a href="PrServlet">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Try Again&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></button> 
+		<a href="end.html"><img id="rightNaviArrow" src="IMAGES/RightArrow.png"></a>
 	</div>		
 
 </body>

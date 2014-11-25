@@ -11,7 +11,7 @@ import java.io.InputStreamReader;
 public class CheckAnswerPr{
 
 	private String result; 
-	private char[] mark = "000000".toCharArray();
+	private char[] mark = "0000000".toCharArray();
 
 	
 	public String checkAnswer(String path, String name) throws IOException { 
@@ -32,7 +32,7 @@ public class CheckAnswerPr{
 			if (line.contains("Present! Ms. Justin Bieber is here!")) { 
 				mark[0] = '1';
 			} else {
-				tempResult.append(line + "\r\n"); 
+				tempResult.append(line + "<br>"); //TODO: Might be \r\n 
 			}
 		} 
 		result = tempResult.toString();
@@ -41,14 +41,14 @@ public class CheckAnswerPr{
 		BufferedReader br = new BufferedReader(new FileReader("/Users/mlee43/Desktop/PRSAVES/class_list.txt")); //TODO: !@#$
 		String line1;
 		while ((line1 = br.readLine()) != null) {
-		   if (line1.equals("Ms. Justin Bieber , math")) { 
+		   if (line1.equals("Ms. Justin Bieber, math")) { 
 			   mark[1] = '1';
 		   }
 		}
 		br.close(); 
 		
 		//Check if the proper methods were called 
-		BufferedReader br2 = new BufferedReader(new FileReader("/Users/mlee43/Desktop/PRSAVES/class_list.txt")); //TODO: !@#$
+		BufferedReader br2 = new BufferedReader(new FileReader(path + File.separator + name)); //TODO: !@#$
 		String line2;
 		while ((line2 = br2.readLine()) != null) {
 			if (line2.contains("if")) { 
@@ -57,26 +57,29 @@ public class CheckAnswerPr{
 			if (line2.contains("for") || line2.contains("while")){ 
 				mark[3] = '1';
 			} 
-			if (line2.contains("pupil") && line2.contains("=") && line2.contains("Classmates(") && line2.contains("student") && line2.contains("math")) {
+			if (line2.contains("the_girl") && line2.contains("=") && line2.contains("Pupil(") && line2.contains("student") && line2.contains("math")) {
 				mark[4] = '1';
 			} 
-			if (line2.contains("pupil.attendance()")) { 
+			if (line2.contains("the_girl.attendance()")) { 
 				mark[5] = '1'; 
 			} 
-			if (line2.contains("pupil.class_list()")) { 
+			if (line2.contains("the_girl.class_list()")) { 
 				mark[6] = '1'; 
 			}
 		}
 		br.close();  
 		
+		//Check if the criteria has been met and return the results
+		int score = 0;
 		for(char mark:mark) { 
-			if(mark == '0') { 
-				break;
-			} else { 
-				result = "1"; 
-				return result;
-			}
+			if(mark == '1') {  
+				score += 1;
+			} 
+		} 
+		if (score == 7) { 
+			result = "1";
 		}
+		
 		return result;
 	} 
 }

@@ -86,7 +86,7 @@ public class CheckPrServlet extends HttpServlet {
 				view.forward(request, response);
 			}  
 	    } else { 
-	    	request.setAttribute("uploadError", prSaver.getUploadResult()); 
+	    	request.setAttribute("prError", prSaver.getUploadResult()); 
 			RequestDispatcher view = request.getRequestDispatcher("pr.jsp"); 
 			view.forward(request, response);
 	    }

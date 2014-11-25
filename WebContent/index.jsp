@@ -22,8 +22,8 @@
 		<div id="login">	
 			<form action="LoginServlet" method="post"> 
 				<p>
-					User ID: <input type="text" name="id" maxlength="6" size="22"><br> 
-					   Name: <input type="text" name="name" size="22">
+					User ID: <input type="text" name="id" maxlength="6" size="15"><br> 
+					   Name: <input type="text" name="name" size="15">
 				</p>
 				<p>
 					<input id="loginbutton" type="submit" value="Create Login/Login">

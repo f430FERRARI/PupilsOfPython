@@ -37,7 +37,7 @@ public class Login {
 		
 		if (loginStatus == false) {
 			String line = null;
-			FileReader fr = new FileReader("/Users/mlee43/Desktop/loginlist.txt"); //TODO: !@#$
+			FileReader fr = new FileReader("/home/ugd/mmllee/PP/loginlist.txt"); //TODO: !@#$
 			BufferedReader textReader = new BufferedReader(fr);  
 			
 			while ((line = textReader.readLine()) != null) { 
@@ -76,33 +76,19 @@ public class Login {
 	
 	public void createLogin(){ 
 		if (loginStatus == false) {
-			if (checkValidity() == true) { 
-				try{ 
-					this.saveLogin(); 
-					loginResult = "The new account with ID number: " + lastId + " has been successfully created."; 
-					//Watch out for this line
-				} 
-				catch(IOException e) { 
-					System.out.println(e.getMessage());
-				}
-			} else {
-				loginResult = "The user ID does not meet the required naming conventions. Please only use the numbers 0-9 in your login ID.";
+			try{ 
+				this.saveLogin(); 
+				loginResult = "The new account with ID number: " + lastId + " has been successfully created."; 
+			} 
+			catch(IOException e) { 
+				System.out.println(e.getMessage());
 			}
 		} 
-	} 
-		
-	public Boolean checkValidity(){ 
-		try { 
-	        Integer.parseInt(lastId); 
-	    } catch(NumberFormatException e) { 
-	        return false; 
-	    }
-	    return true;
 	} 
 	
 	public void saveLogin() throws IOException { 
 		String toWrite = lastId + "$" + lastName;
-		FileWriter write = new FileWriter("/Users/mlee43/Desktop/loginlist.txt", true); //TODO: !@#$
+		FileWriter write = new FileWriter("/home/ugd/mmllee/PP/loginlist.txt", true); //TODO: !@#$
 		PrintWriter print_line = new PrintWriter(write); 
 		print_line.println(toWrite); 
 		print_line.close(); 

@@ -27,7 +27,7 @@
 			} else { 
 				b1 = "style=\"color:red;\" value=\"Incorrect\"";
 			} if (questions[1] == '1') { 
-				b2 = "value=\"__init__\"";
+				b2 = "value=\"init\"";
 			} else {  
 				b2 = "style=\"color:red;\" value=\"Incorrect\"";
 			} if (questions[2] == '1') { 
@@ -73,7 +73,7 @@
 
 	<div class="menubar">  
 		<div id="menucontent">	
-			<a href="index.jsp" id="pythonLogo"> >_Pupil's of Python</a>
+			<a id="pythonLogo"> >_Pupil's of Python</a>
 			<div id="menubuttons"> 		
 				<button type="button"><a href="ProgressServlet">Course Progress</a></button> 
 				<button type="button"><a href="logoutServlet">Logout</a></button>

@@ -38,7 +38,7 @@ public class CheckAnswerPr{
 		result = tempResult.toString();
 		
 		//Check if the class method outputted the correct thing
-		BufferedReader br = new BufferedReader(new FileReader("/Users/mlee43/Desktop/PRSAVES/class_list.txt")); //TODO: !@#$
+		BufferedReader br = new BufferedReader(new FileReader("/home/ugd/mmllee/PP/PRSAVES/class_list.txt")); //TODO: !@#$
 		String line1;
 		while ((line1 = br.readLine()) != null) {
 		   if (line1.equals("Ms. Justin Bieber, math")) { 

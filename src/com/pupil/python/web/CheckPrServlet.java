@@ -19,7 +19,7 @@ import com.pupil.python.model.Pr;
 @MultipartConfig //Watch this 
 public class CheckPrServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;  
-	private String foldPath = "/Users/mlee43/Desktop/PRSAVES";  //TODO: !@#$
+	private String foldPath = "/home/ugd/mmllee/PP/PRSAVES";  //TODO: !@#$
 	private String fileName;
 	private String loginInUse;  
 	private String uploadResult;

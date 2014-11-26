@@ -9,16 +9,30 @@
 	
 	<div class="menubar"> 
 		<div id="menucontent">	
-			<a href="index.jsp" id="pythonLogo"> >_Pupil's of Python</a>
+			<a id="pythonLogo"> >_Pupil's of Python</a>
 			<div id="menubuttons"> 
-				<button type="button"><a href="progress.jsp">Course Progress</a></button> 
+				<button type="button"><a href="ProgressServlet">Course Progress</a></button> 
 				<button type="button"><a href="logoutServlet">Logout</a></button>
 			</div>
 		</div>
 	</div>   
 	
 	<div class="content"> 
-		<h1>Class Example</h1> 
+		<h1>Class Syntax</h1>  
+		<p>In order to create a class, you must use a class definition. Once a class is defined, you may add methods which follow the same syntax rules as a regular function. Here is how you would define a class using Backus Nauer Form:</p>
+		<pre>
+			<code style="color: white;"> 
+			classdef ::= 
+             			    "class" classname [inheritance] ":"
+              			    suite
+  
+			inheritance ::= 
+             				"(" [expression_list] ")"
+  
+			classname ::= 
+             			    identifier
+			</code>  
+		</pre>
 		<p>Programming with classes in Python is easy after you get a feel of what it looks like. Here's a basic example of Python code with classes. Don't hesitate to look back at the <a href="concept2.html">previous page</a> if you're having trouble understanding a line.</p> 
 		<pre>
 			<code style="color: white;"> 

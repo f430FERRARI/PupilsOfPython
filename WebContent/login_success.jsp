@@ -17,7 +17,7 @@
 		<div id="menucontent">	
 			<a href="index.jsp" id="pythonLogo"> >_Pupil's of Python</a>
 			<div id="menubuttons"> 
-				<button type="submit" formaction="logoutServlet" formmethod="get">Logout</button>
+				<button type="button"><a href="logoutServlet">Logout</a></button>
 			</div>
 		</div>	
 	</div>   

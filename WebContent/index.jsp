@@ -31,10 +31,10 @@
 			</form>  
 		</div> 
 		<div id="pythons">
-				<img src="IMAGES/pythonSMALL.png"> 
-				<img src="IMAGES/pythonSMALL.png"> 
-				<img src="IMAGES/pythonSMALL.png"> 
-				<img id="pyBig" src="IMAGES/pythonBIG.png">  
+			<img src="IMAGES/pythonSMALL.png"> 
+			<img src="IMAGES/pythonSMALL.png"> 
+			<img src="IMAGES/pythonSMALL.png"> 
+			<img id="pyBig" src="IMAGES/pythonBIG.png">  
 		</div>   
 	</div>
 	<div id="des">

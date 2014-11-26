@@ -75,7 +75,7 @@
 		<div id="menucontent">	
 			<a href="index.jsp" id="pythonLogo"> >_Pupil's of Python</a>
 			<div id="menubuttons"> 		
-				<button type="button"><a href="progress.jsp">Course Progress</a></button> 
+				<button type="button"><a href="ProgressServlet">Course Progress</a></button> 
 				<button type="button"><a href="logoutServlet">Logout</a></button>
 			</div>
 		</div>
@@ -89,12 +89,12 @@
 			<p> 
 				<pre> 
 				<code> 
-	<input type="text" name="fbanswer" <%= b1 %>> Classroom: 
-	     def __<input type="text" name="fbanswer" <%=b2 %> >__(<input type="text" name="fbanswer" <%=b3 %>>, room_number, vacant=True) 
-	          <input type="text" name="fbanswer" <%=b4 %> >.room_number = room_number 
+	<input type="text" name="fbanswer" size="10"<%= b1 %>> Classroom: 
+	     def __<input type="text" name="fbanswer" size="10"<%=b2 %> >__(<input type="text" name="fbanswer" size="10"<%=b3 %>>, room_number, vacant=True) 
+	          <input type="text" name="fbanswer" size="10"<%=b4 %> >.room_number = room_number 
 	          self.vacant = vacant 
 	
-	     <input type="text" name="fbanswer" <%=b5 %>> is_vacant(self):  
+	     <input type="text" name="fbanswer" size="10"<%=b5 %>> is_vacant(self):  
 	          print self.vacant 
 	
 	cpsc_235 = Classroom(176, False)
@@ -103,14 +103,14 @@
 				</code> 
 				</pre>
 			</p> 
-			<input type="submit" value="Save and Submit">
+			<input id="submit" style="position: relative; left: 350px;" type="submit" value="Save and Submit">
 		</form> 
 		<br> 
 		<% 
 			if (progress != null){  
 				if (progress.equals("111111")) { 
 					%> 
-					<h2><img id="complete" alt="complete" src="/IMAGES/complete.png">You have already complete this question</h2>
+					<h2><img id="complete" alt="complete" src="IMAGES/complete.png">You have already complete this question</h2>
 					<% 
 				}
 			} 

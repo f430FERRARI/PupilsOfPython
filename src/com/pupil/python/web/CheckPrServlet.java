@@ -1,15 +1,6 @@
 package com.pupil.python.web;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.io.PrintWriter;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -31,7 +22,6 @@ public class CheckPrServlet extends HttpServlet {
 	private String foldPath = "/Users/mlee43/Desktop/PRSAVES";  //TODO: !@#$
 	private String fileName;
 	private String loginInUse;  
-	private String codeLoco; 
 	private String uploadResult;
     	
     public CheckPrServlet() {

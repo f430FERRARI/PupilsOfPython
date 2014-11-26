@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.pupil.python.model.CourseProgress;
-import com.pupil.python.model.Pr;
 
 @WebServlet("/PrServlet")
 public class PrServlet extends HttpServlet {

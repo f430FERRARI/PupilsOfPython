@@ -1,35 +1,17 @@
 package com.pupil.python.model;
 
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.io.PrintWriter;
-
 import javax.servlet.http.Part;
 
-public class Pr extends Progress{
+public class Pr{
 
-	private String prPath; 
 	private String uploadResult; 
 	private String status; 
-	
-	public String loadProgress() throws IOException { 
-		
-		FileReader fr = new FileReader(prPath);
-		BufferedReader br = new BufferedReader(fr);
-		StringBuffer stringBuffer = new StringBuffer();
-		String line = null;
-		while((line = br.readLine())!=null){
-			stringBuffer.append(line);
-		} 
-		return line;
-	} 
 	
 	public String saveFile(String path, Part filePart, String fileName) throws IOException { 
 		OutputStream out = null;

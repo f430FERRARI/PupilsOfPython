@@ -32,7 +32,7 @@ public class CheckAnswerPr{
 			if (line.contains("Present! Ms. Justin Bieber is here!")) { 
 				mark[0] = '1';
 			} else {
-				tempResult.append(line + "<br>"); //TODO: Might be \r\n 
+				tempResult.append(line + "<br>"); 
 			}
 		} 
 		result = tempResult.toString();

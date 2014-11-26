@@ -21,7 +21,7 @@
 		<div id="menucontent">	
 			<a href="index.jsp" id="pythonLogo"> >_Pupil's of Python</a>
 			<div id="menubuttons"> 	
-				<button type="button"><a href="progress.jsp">Course Progress</a></button> 
+				<button type="button"><a href="ProgressServlet">Course Progress</a></button> 
 				<button type="button"><a href="logoutServlet">Logout</a></button>
 			</div>
 		</div>
@@ -41,27 +41,30 @@
 			<li>Call the attendance method on this object.</li>
 			<li>Call the class_list method on this object.</li>  
 		</ol> 
-		<br>
-		<form id="upbox" action="CheckPrServlet" method="post" enctype="multipart/form-data"> 
-			File:
-            <input type="file" name="file" id="file"> <b>
-			</p> 
-			<p> 
-				<input type="submit" value="upload" name="upload" id="upload">
-			</p>
-		</form> 
+		<br> 
+		<div id="upbox">
+			<form action="CheckPrServlet" method="post" enctype="multipart/form-data"> 
+				
+				<h2 style="text-align: center">Upload your program here!</h2>
+	            <p style="text-align: center">File:    <input type="file" name="file" id="file"></p><b>
+				</p> 
+				<p style="text-align: center"> 
+					<input id="upbutton" type="submit" value="Save and submit" name="upload" id="upload">
+				</p>
+			</form>  
+		</div>
 		<br> 
 		<% 
 			if (prError != null) { 
 				%> 
-				<h2 style="color:red;">The following error has occurred:</h2>
+				<h2 style="color:red;">Your solution was incorrect. The following message was printed on the console:</h2>
 				<p style="color:red;"><%= prError %></p>
 				<%
 			} 
 			if (progress != null){  
 				if (progress.equals("1")) {	
 					%> 
-					<h2><img id="complete" alt="complete" src="/IMAGES/complete.png">You have already complete this question</h2>
+					<h2><img id="complete" alt="complete" src="IMAGES/complete.png">You have already complete this question</h2>
 					<% 
 				}
 			}

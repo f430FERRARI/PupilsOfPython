@@ -27,7 +27,7 @@
 		<div id="menucontent">				
 			<a href="index.jsp" id="pythonLogo"> >_Pupil's of Python</a>
 			<div id="menubuttons"> 				
-				<button type="button"><a href="progress.jsp">Course Progress</a></button> 
+				<button type="button"><a href="ProgressServlet">Course Progress</a></button> 
 				<button type="button"><a href="logoutServlet">Logout</a></button>
 			</div>
 		</div>
@@ -36,7 +36,7 @@
 	<div class="content"> 
 		<h1>Multiple Choice Question #2</h1> 
 		<p>Please select the best answer for the following question.</p>
-		<form action="CheckMcServlet" method="GET">   
+		<form id="mc" action="CheckMcServlet" method="GET">   
 			<br>
 			<h2>Why are classes used in Python?</h2> 
 			<p> 
@@ -46,7 +46,7 @@
 				<input type="radio" name="mc2answer" value="d">d) Solely to teach special concepts in Python
 			</p> 
 			<p>
-				<input type="submit" value="Check Answer">
+				<input id="submit" style="position: relative; left: 100px;" type="submit" value="Save and submit">
 			</p>
 		</form> 
 		<br>
@@ -60,7 +60,7 @@
 			}
 			if (checked == "checked"){ 
 				%> 
-				<h2><img id="complete" alt="complete" src="/IMAGES/complete.png">You have already complete this question</h2>
+				<h2><img id="complete" alt="complete" src="IMAGES/complete.png">You have already complete this question</h2>
 				<%
 			}
 		%> 

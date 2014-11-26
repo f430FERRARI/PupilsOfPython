@@ -19,11 +19,11 @@ html {
 	left: 10px;
 }
 
-#menucontent button, .content button{ 
+#menucontent button, .content button, #submit{ 
 	background-color: #5C8A00;
 }
 
-button a{ 
+button a, #submit{ 
 	text-decoration: none; 
 	color: lime; 
 	font-size: 125%;
@@ -141,10 +141,9 @@ a:hover, a:active, a:focus {
 }  
 
 #warnings { 
-	position: relative; 
-	left: 125px; 
-	margin-top: 30px; 
-	margin-bottom: 30px;
+		text-align: center;
+		margin-top: 30px; 
+		margin-bottom: 30px;
 } 
 
 #login { 
@@ -156,7 +155,7 @@ a:hover, a:active, a:focus {
 	position: relative;  
 	left: 200px; 
 	top: 40px;
-	
+	z-index: 3;
 } 
 
 #loginbutton { 
@@ -172,7 +171,8 @@ a:hover, a:active, a:focus {
 
 #pythons {   
 	position:relative; 
-	bottom: 140px;
+	bottom: 140px; 
+	z-index: 2;
 }  
 
 #pyBig {  
@@ -186,7 +186,8 @@ a:hover, a:active, a:focus {
 	position: relative; 
 	bottom: 168px; 
 	padding-top: 50px; 
-	padding-bottom: 50px;
+	padding-bottom: 50px; 
+	z-index: 3;
 }   
 
 #descontent {  
@@ -202,7 +203,18 @@ a:hover, a:active, a:focus {
 } 
 
 #upbox {
-	background-color: #474747;  
+	background-color: #474747; 
+	width: 400px; 
+	padding-top: 10px; 
+	position: relative; 
+	left: 245px;
+}
+
+#upbutton { 
+	width: 400px; 
+	border-radius: 0px; 
+	background-color: #99CC00; 
+	font-size: 125%
 }
 
 #fbans { 
@@ -212,3 +224,18 @@ a:hover, a:active, a:focus {
 #complete {  
 	vertical-align: middle;
 }
+
+#mc { 
+	position: relative; 
+	left: 250px;
+} 
+
+#login2 { 
+	background-color: #474747; 
+	width: 202px;    
+	padding-left: 25px; 
+	padding-top: 5px; 
+	padding-right: 25px; 
+	position: relative;  
+	left: 350px; 
+} 

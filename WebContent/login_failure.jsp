@@ -24,18 +24,20 @@
 	 
 	<div class="content">
 		<h1>Invalid Login</h1> 
-		<p>The Login was invalid because: </p>  
-		<p><%= message %></p>
+		<p>The Login was invalid because:</p>  
+		<p style="color:red;"><%= message %></p>
 		<p>Please try again</p>  
-		<form action="LoginServlet" method="post"> 
-			<p>
-				User ID: <input type="text" name="id"><br> 
-				   Name: <input type="text" name="name" size="22">
-			</p>
-			<p>
-				<input type="submit" value="Login">
-			</p>	
-		</form> 
+		<div id="login2">
+			<form action="LoginServlet" method="post"> 
+				<p>
+					User ID: <input type="text" name="id"><br> 
+					   Name: <input type="text" name="name" size="22">
+				</p>
+				<p>
+					<input id="loginbutton" type="submit" value="Login">
+				</p>	
+			</form>  
+		</div>
 	</div> 
 	
 </body>

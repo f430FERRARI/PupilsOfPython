@@ -22,7 +22,7 @@
 		<div id="login">	
 			<form action="LoginServlet" method="post"> 
 				<p>
-					User ID: <input type="text" name="id" maxlength="6" size="15"><br> 
+					User ID: <input type="text" name="id" size="15"><br> 
 					   Name: <input type="text" name="name" size="15">
 				</p>
 				<p>

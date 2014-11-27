@@ -125,9 +125,9 @@
 	</div> 
 	
 	<div class="navigator">  
-		<a href="mc2.jsp"><img id="leftNaviArrow" src="IMAGES/LeftArrow.png"></a>
+		<a href="Mc2Servlet"><img id="leftNaviArrow" src="IMAGES/LeftArrow.png"></a>
 		<button type="button" id="middlebutton"><a href="fb_answer.html">&nbsp;&nbsp;&nbsp;&nbsp;See Answer&nbsp;&nbsp;&nbsp;&nbsp;</a></button> 
-		<a href="pr.jsp"><img id="rightNaviArrow" src="IMAGES/RightArrow.png"></a>	
+		<a href="ProgressServlet"><img id="rightNaviArrow" src="IMAGES/RightArrow.png"></a>	
 	</div>
 	
 </body>

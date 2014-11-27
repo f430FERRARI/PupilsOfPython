@@ -30,8 +30,8 @@
 		<div id="login2">
 			<form action="LoginServlet" method="post"> 
 				<p>
-					User ID: <input type="text" name="id"><br> 
-					   Name: <input type="text" name="name" size="22">
+					User ID: <input type="text" name="id" size="15"><br> 
+					   Name: <input type="text" name="name" size="15">
 				</p>
 				<p>
 					<input id="loginbutton" type="submit" value="Login">

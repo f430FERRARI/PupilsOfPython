@@ -5,7 +5,7 @@ import java.io.IOException;
 public class CourseProgress extends Progress{
 	
 	public CourseProgress() { 
-		identifier = "@";
+		identifier = ":";
 	}
 	
 	public void saveProgress(String toSave, String question, String userId){ 

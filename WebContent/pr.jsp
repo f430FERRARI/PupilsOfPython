@@ -32,12 +32,12 @@
 		<p>Congratulations on making it this far! Be prepared as you will face your toughest challenge yet. As long as you read the instructions carefully, you should be able to complete this question using the lessons you have just learned about classes. Good luck!</p>
 		<br>
 		<ol>
-			<li>Using input from the file at this path "/Users/mlee43/Desktop/PRSAVES/names.txt", define a procedure named “boys_and_girls” in that uses at least one loop and at least one if statement to return the GIRL from the boys. A boys name will be in the form "Mr. Joe Schmoe" while a girls name has the for "Ms. Sally Schmoe".</li>
+			<li>Using input from the file at this path "/home/ugd/mmllee/PP/PRSAVES/names.txt", define a procedure named “boys_and_girls” that uses at least one loop and at least one if statement to <u>return</u> the <u>girl</u> from the boys. A boys name will be in the form "Mr. Joe Schmoe" while a girls name has the for "Ms. Sally Schmoe".</li>
 			<li>Call the boys_and_girls function and store the result in a variable named "student"</li>
 			<li>Define a class named “Pupil”. All objects in Pupil must have two attributes, “name”, and “favorite_subject”.</li> 
 			<li>Define a method named “attendance” that prints the string, “Present! (Name of pupil) is here!”</li>
-			<li>Define a method named “class_list” that outputs the attributes of the Pupil object in the form "(name of object), (object's favorite subject)" to the "class_list.txt" file.</li>
-			<li>Create a Pupil object named "the_girl" that uses the "student" variable retrieved from step one. Set this objects favorite_subject to "math"</li>
+			<li>Define a method named “class_list” that outputs the attributes of the Pupil object in the form "(name of object), (object's favorite subject)" to the "/home/ugd/mmllee/PP/PRSAVES/class_list.txt" file.</li>
+			<li>Create a Pupil object named "the_girl" that uses the "student" variable retrieved from step one as the "name". Set this objects favorite_subject to "math"</li>
 			<li>Call the attendance method on this object.</li>
 			<li>Call the class_list method on this object.</li>  
 		</ol> 

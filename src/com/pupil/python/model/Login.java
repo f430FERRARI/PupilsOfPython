@@ -42,7 +42,7 @@ public class Login {
 			
 			while ((line = textReader.readLine()) != null) { 
 					
-				String[] parts = line.split("\\$"); 
+				String[] parts = line.split("\\`"); 
 				String idPart = parts[0]; 
 				String namePart = parts[1];
 					
@@ -87,7 +87,7 @@ public class Login {
 	} 
 	
 	public void saveLogin() throws IOException { 
-		String toWrite = lastId + "$" + lastName;
+		String toWrite = lastId + "`" + lastName;
 		FileWriter write = new FileWriter("/home/ugd/mmllee/PP/loginlist.txt", true); //TODO: !@#$
 		PrintWriter print_line = new PrintWriter(write); 
 		print_line.println(toWrite); 

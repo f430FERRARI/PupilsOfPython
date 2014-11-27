@@ -7,12 +7,13 @@ public class Reset {
 	
 	public void resetProgress() throws IOException{ 
 		
+		System.out.println("reset");
 		PrintWriter writer = new PrintWriter("/home/ugd/mmllee/PP/loginlist.txt", "UTF-8");
-		writer.println("DEFAULT$DONOTDISTURB");
+		writer.println("DEFAULT`DONOTDISTURB");
 		writer.close(); //TODO: !@#$
 		
 		PrintWriter writer2 = new PrintWriter("/home/ugd/mmllee/PP/questionprogress.txt", "UTF-8");
-		writer2.println("!DEFAULT$DONOTDISTURB"); //TODO:!@#$
+		writer2.println("!DEFAULT:DONOTDISTURB"); //TODO:!@#$
 		writer2.close();
 	}
 }

@@ -61,7 +61,7 @@
 		<div id="menucontent">		
 			<a id="pythonLogo"> >_Pupil's of Python</a>
 			<div id="menubuttons"> 				
-				<button type="button"><a href="logoutServlet">Logout</a></button>
+				<a href="logoutServlet">Logout</a>
 			</div>
 		</div>
 	</div>    
@@ -82,7 +82,7 @@
 	</div> 
 	
 	<div class="navigator">  
-		<button type="button" id="middlebutton"><a href="concept1.html">To first lesson</a></button> 
+		<a id="middlebutton" href="concept1.html">To first lesson</a>
 	</div> 
 	 
 </body>

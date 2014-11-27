@@ -17,7 +17,7 @@
 		<div id="menucontent">	
 			<a href="index.jsp" id="pythonLogo"> >_Pupil's of Python</a>
 			<div id="menubuttons"> 	
-				<button type="button"><a href="index.jsp">Homepage</a></button> 
+				<a href="index.jsp">Homepage</a> 
 			</div>
 		</div>
 	</div>   

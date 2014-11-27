@@ -17,7 +17,7 @@
 		<div id="menucontent">	
 			<a href="index.jsp" id="pythonLogo"> >_Pupil's of Python</a>
 			<div id="menubuttons"> 
-				<button type="button"><a href="logoutServlet">Logout</a></button>
+				<a href="logoutServlet">Logout</a>
 			</div>
 		</div>	
 	</div>   
@@ -38,7 +38,7 @@
 	</div>  
 	
 	<div class="navigator"> 
-		<button type="button" id="middlebutton"><a href="ProgressServlet">&nbsp;&nbsp;Let's begin!&nbsp;&nbsp;</a></button>	 
+		<a id="middlebutton" href="ProgressServlet">&nbsp;&nbsp;Let's begin!&nbsp;&nbsp;</a>	 
 	</div>
 
 </body>

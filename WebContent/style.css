@@ -23,10 +23,12 @@ html {
 	background-color: #5C8A00;
 }
 
-button a, #submit{ 
+#menubuttons a, #submit{  
+	background-color: #5C8A00;
 	text-decoration: none; 
 	color: lime; 
-	font-size: 125%;
+	font-size: 125%; 
+	padding: 3px;
 } 
 
 #warnings a{ 
@@ -111,7 +113,8 @@ a:hover, a:active, a:focus {
   	margin-left: 15px;  
   	position: absolute; 
   	left: 314px; 
-  	bottom: 52px;
+  	bottom: 52px; 
+  	text-decoration: none;
 }  
 
 #middlebutton a{ 

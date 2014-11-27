@@ -20,6 +20,7 @@ public class ResetServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		System.out.println("get reset");
 		//Reset page
 		Reset confirmed = new Reset(); 
 		confirmed.resetProgress(); 

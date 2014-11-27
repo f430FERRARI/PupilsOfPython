@@ -11,8 +11,8 @@
 		<div id="menucontent">			
 			<a id="pythonLogo"> >_Pupil's of Python</a>
 			<div id="menubuttons"> 		
-				<button type="button"><a href="ProgressServlet">Course Progress</a></button> 
-				<button type="button"><a href="logoutServlet">Logout</a></button>
+				<a href="ProgressServlet">Course Progress</a> 
+				<a href="logoutServlet">Logout</a>
 			</div>
 		</div>
 	</div>    
@@ -33,7 +33,7 @@
 	
 	class Pupil: 
 		def __init__(self, name, favorite_subject):
-			self.name = name 
+			self.name = name.rstrip() 
 			self.favorite_subject = favorite_subject 
 		def attendance(self): 
 			print "Present! " + self.name + " is here!" 
@@ -51,7 +51,7 @@
 	</div> 
 	
 	<div class="navigator">  
-		<button type="button" id="middlebutton"><a href="PrServlet">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Try Again&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></button> 
+		<a id="middlebutton" href="PrServlet">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Try Again&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
 		<a href="end.html"><img id="rightNaviArrow" src="IMAGES/RightArrow.png"></a>
 	</div>		
 

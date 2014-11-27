@@ -68,7 +68,8 @@ public class CheckMcServlet extends HttpServlet {
 		} else { 
 			request.setAttribute(question + "Error", result); 
 			RequestDispatcher view = request.getRequestDispatcher(question + ".jsp"); 
-			view.forward(request, response);		}
+			view.forward(request, response);		 
+		}
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -21,8 +21,8 @@
 		<div id="menucontent">	
 			<a id="pythonLogo"> >_Pupil's of Python</a>
 			<div id="menubuttons"> 	
-				<button type="button"><a href="ProgressServlet">Course Progress</a></button> 
-				<button type="button"><a href="logoutServlet">Logout</a></button>
+				<a href="ProgressServlet">Course Progress</a>
+				<a href="logoutServlet">Logout</a>
 			</div>
 		</div>
 	</div>    
@@ -73,7 +73,7 @@
 	
 	<div class="navigator">  
 		<img id="leftNaviArrow" href="FbServlet" src="IMAGES/LeftArrow.png">
-		<button type="button" id="middlebutton"><a href="pr_answer.html">&nbsp;&nbsp;&nbsp;&nbsp;See Answer&nbsp;&nbsp;&nbsp;&nbsp;</a></button> 
+		<a id="middlebutton" href="pr_answer.html">&nbsp;&nbsp;&nbsp;&nbsp;See Answer&nbsp;&nbsp;&nbsp;&nbsp;</a> 
 	</div>	
 
 </body>

@@ -71,6 +71,8 @@ public class CheckPrServlet extends HttpServlet {
 				response.setContentType("text/html"); 
 				response.sendRedirect("pr_correct.html"); 
 			} else { 
+				String prErrorDets = prChecker.getResult2(); 
+				request.setAttribute("prErrorDets", prErrorDets);
 				request.setAttribute("prError", result); 
 				RequestDispatcher view = request.getRequestDispatcher("pr.jsp"); 
 				view.forward(request, response);

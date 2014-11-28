@@ -46,7 +46,7 @@
 				<input type="radio" name="mc2answer" value="d">d) Solely to teach special concepts in Python
 			</p> 
 			<p>
-				<input id="submit" style="position: relative; left: 100px;" type="submit" value="Save and submit">
+				<input id="submit" style="position: relative; left: 115px;" type="submit" value="Save and submit">
 			</p>
 		</form> 
 		<br>

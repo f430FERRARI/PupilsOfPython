@@ -40,11 +40,15 @@ public class PrServlet extends HttpServlet {
 		String prog = userPr.loadProgress(loginInUse);  
 		char[] questions = prog.toCharArray();  
 		
-		if (questions[3] == '1') { 
-			prProg = "1";
-		} else { 
+		if (questions[0] == 'F'){ 
 			prProg = "0";
-		}
+		} else {
+			if (questions[3] == '1') { 
+				prProg = "1";
+			} else { 
+				prProg = "0";
+			}
+		} 
 		
 		//Forward the PR progress information to the jsp 
 		request.setAttribute("prProgress", prProg); 

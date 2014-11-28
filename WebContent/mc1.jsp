@@ -46,7 +46,7 @@
 				<input type="radio" name="mc1answer" value="d">d) A group of snakes	
 			</p> 
 			<p>
-				<input id="submit" style="position: relative; left: 100px;" type="submit" value="Save and Submit"> 
+				<input id="submit" style="position: relative; left: 115px;" type="submit" value="Save and Submit"> 
 			</p>
 		</form>   
 		<br>

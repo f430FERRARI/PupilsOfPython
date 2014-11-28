@@ -103,7 +103,7 @@
 				</code> 
 				</pre>
 			</p> 
-			<input id="submit" style="position: relative; left: 350px;" type="submit" value="Save and Submit">
+			<input id="submit" style="position: relative; left: 365px;" type="submit" value="Save and Submit">
 		</form> 
 		<br> 
 		<% 
@@ -127,7 +127,7 @@
 	<div class="navigator">  
 		<a href="Mc2Servlet"><img id="leftNaviArrow" src="IMAGES/LeftArrow.png"></a>
 		<a id="middlebutton" href="fb_answer.html">&nbsp;&nbsp;&nbsp;&nbsp;See Answer&nbsp;&nbsp;&nbsp;&nbsp;</a> 
-		<a href="ProgressServlet"><img id="rightNaviArrow" src="IMAGES/RightArrow.png"></a>	
+		<a href="PrServlet"><img id="rightNaviArrow" src="IMAGES/RightArrow.png"></a>	
 	</div>
 	
 </body>

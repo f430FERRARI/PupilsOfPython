@@ -11,8 +11,9 @@ import java.io.InputStreamReader;
 public class CheckAnswerPr{
 
 	private String result; 
-	private char[] mark = "0000000".toCharArray();
-
+	private char[] mark = "0000000".toCharArray(); 
+	private String result2 = ""; 
+	private String[] msg= {"Your attendance method did not print out the correct string.","Your output for the class_list method did not produce the correct string.","Your program does not contain an if statement","Your program does not contain a for loop.","Your program does not construct the correct object from the Pupil class.","Your program does not properly call the attendance method on the object.","Your program does not properly call the class_list method on the object."};
 	
 	public String checkAnswer(String path, String name) throws IOException { 
 		
@@ -43,7 +44,7 @@ public class CheckAnswerPr{
 		while ((line1 = br.readLine()) != null) {
 		   if (line1.equals("Ms. Justin Bieber, math")) { 
 			   mark[1] = '1';
-		   }
+		   } 
 		}
 		br.close(); 
 		
@@ -59,27 +60,34 @@ public class CheckAnswerPr{
 			} 
 			if (line2.contains("the_girl") && line2.contains("=") && line2.contains("Pupil(") && line2.contains("student") && line2.contains("math")) {
 				mark[4] = '1';
-			} 
+			}
 			if (line2.contains("the_girl.attendance()")) { 
 				mark[5] = '1'; 
 			} 
 			if (line2.contains("the_girl.class_list()")) { 
 				mark[6] = '1'; 
-			}
+			} 
 		}
 		br.close();  
 		
 		//Check if the criteria has been met and return the results
 		int score = 0;
-		for(char mark:mark) { 
-			if(mark == '1') {  
+		for(int i=0; i < msg.length; i++) { 
+			if(mark[i] == '1') {  
 				score += 1;
 			} 
+			if(mark[i] == '0') { 
+				result2 = result2 + "<br>" + msg[i];
+			}
 		} 
 		if (score == 7) { 
 			result = "1";
 		}
 		
 		return result;
-	} 
+	}  
+	
+	public String getResult2() { 
+		return result2;
+	}
 }

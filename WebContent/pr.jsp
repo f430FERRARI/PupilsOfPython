@@ -14,7 +14,8 @@
 		String progress = (String)request.getAttribute("prProgress");
 	
 		//Load user error
-		String prError = (String)request.getAttribute("prError");
+		String prError = (String)request.getAttribute("prError"); 
+		String prErrorDets = (String)request.getAttribute("prErrorDets");
 	%>
 
 	<div class="menubar"> 
@@ -55,12 +56,6 @@
 		</div>
 		<br> 
 		<% 
-			if (prError != null) { 
-				%> 
-				<h2 style="color:red;">Your solution was incorrect. The following message was printed on the console:</h2>
-				<p style="color:red;"><%= prError %></p>
-				<%
-			} 
 			if (progress != null){  
 				if (progress.equals("1")) {	
 					%> 
@@ -68,7 +63,20 @@
 					<% 
 				}
 			}
-		%> 
+			if (prError != null) { 
+				%> 
+				<h2 style="color:red;">Your solution was incorrect. The following message was printed on the console:</h2>
+				<p style="color:red;"><%= prError %></p><br>
+				<%
+			}  
+			if (prErrorDets != null) { 
+				%> 
+				<h2 style="color:red;">You did not meet the following requirements:</h2>
+				<p style="color:red;"><%= prErrorDets %></p> 
+				<%
+			}
+			
+		%>  
 	</div> 
 	
 	<div class="navigator">  

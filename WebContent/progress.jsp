@@ -73,7 +73,7 @@
 		<div style="text-align: center;">
 			<p><img alt="study" src="IMAGES/study.png" id="complete">&nbsp;&nbsp;<a href="concept1.html">What is a Class?</a></p>
 			<p><img alt="study" src="IMAGES/study.png" id="complete">&nbsp;&nbsp;<a href="concept2.html">Attributes, Methods, __init__ and Self</a></p>
-			<p><img alt="study" src="IMAGES/study.png" id="complete">&nbsp;&nbsp;<a href="concept3.html">Class Example</a></p> 
+			<p><img alt="study" src="IMAGES/study.png" id="complete">&nbsp;&nbsp;<a href="concept3.html">Class Syntax</a></p> 
 			<p><%= mc1 %>&nbsp;&nbsp;<a href="McServlet">Multiple Choice #1</a></p> 
 			<p><%= mc2 %>&nbsp;&nbsp;<a href="Mc2Servlet">Multiple Choice #2</a></p>
 			<p><%= fb %>&nbsp;&nbsp;<a href="FbServlet">Fill-in-the-Blank</a></p>
@@ -82,7 +82,7 @@
 	</div> 
 	
 	<div class="navigator">  
-		<a id="middlebutton" href="concept1.html">To first lesson</a>
+		<a id="middlebutton" href="concept1.html">&nbsp;&nbsp;To first lesson&nbsp;&nbsp;&nbsp;</a>
 	</div> 
 	 
 </body>

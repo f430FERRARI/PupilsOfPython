@@ -60,7 +60,7 @@ public class Login {
 	
 	public void setUser(String setUserName){ 
 		if (checkName(setUserName)) { 
-			loginResult = "Thank you for returning! You are now logged in with the ID number: " + lastId +".";
+			loginResult = "Thank you for returning! You are now logged in with the ID number: " + "<span style=\"color:white;\">"+ lastId +"</span>"+".";
 		} else { 
 			loginResult = "The user ID already exists. The username does not match the user ID. Please enter the correct username or create a new user ID.";
 		}		
@@ -78,7 +78,7 @@ public class Login {
 		if (loginStatus == false) {
 			try{ 
 				this.saveLogin(); 
-				loginResult = "The new account with ID number: " + lastId + " has been successfully created."; 
+				loginResult = "The new account with ID number: " + "<span style=\"color:white;\">" + lastId +"</span>" + " has been successfully created."; 
 			} 
 			catch(IOException e) { 
 				System.out.println(e.getMessage());

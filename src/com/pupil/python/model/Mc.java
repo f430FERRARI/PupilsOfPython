@@ -7,7 +7,7 @@ public class Mc extends Progress{
 		 if (question.equals("mc1")) {
 			 identifier = "%";
 		 } else if (question.equals("mc2")) { 
-			 identifier = "^";
+			 identifier = "@";
 		 }
 	}
 	

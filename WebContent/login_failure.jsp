@@ -26,7 +26,7 @@
 		<h1>Invalid Login</h1> 
 		<p>The Login was invalid because:</p>  
 		<p style="color:red;"><%= message %></p>
-		<p>Please try again</p>  
+		<p></p>  
 		<div id="login2">
 			<form action="LoginServlet" method="post"> 
 				<p>

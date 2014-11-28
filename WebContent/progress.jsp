@@ -77,7 +77,7 @@
 			<p><%= mc1 %>&nbsp;&nbsp;<a href="McServlet">Multiple Choice #1</a></p> 
 			<p><%= mc2 %>&nbsp;&nbsp;<a href="Mc2Servlet">Multiple Choice #2</a></p>
 			<p><%= fb %>&nbsp;&nbsp;<a href="FbServlet">Fill-in-the-Blank</a></p>
-			<p><%= pr %>&nbsp;&nbsp;<a href="pr.jsp">Programming Question</a></p> 
+			<p><%= pr %>&nbsp;&nbsp;<a href="PrServlet">Programming Question</a></p> 
 		</div>
 	</div> 
 	

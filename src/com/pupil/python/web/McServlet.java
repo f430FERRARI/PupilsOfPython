@@ -10,12 +10,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.pupil.python.model.CourseProgress;
 import com.pupil.python.model.Mc;
 
 @WebServlet("/McServlet")
 public class McServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    public String loginInUse;
+    public String loginInUse; 
+    private String mc1Prog;
 	
     public McServlet() {
         super();
@@ -35,8 +37,19 @@ public class McServlet extends HttpServlet {
 		} 
 		
 		//Loads current users mc1 progress 
-		Mc userMc1 = new Mc("mc1"); 
-		String mc1Prog = userMc1.loadProgress(loginInUse); 
+		CourseProgress userMc1 = new CourseProgress(); 
+		String prog = userMc1.loadProgress(loginInUse);  
+		char[] questions = prog.toCharArray();  
+		
+		if (questions[0] == 'F'){ 
+			mc1Prog = "0";
+		} else {
+			if (questions[0] == '1') { 
+				mc1Prog = "1";
+			} else { 
+				mc1Prog = "0";
+			}
+		} 
 		
 		//Forward the mc1 progress information to the jsp 
 		request.setAttribute("mc1Progress", mc1Prog); 
